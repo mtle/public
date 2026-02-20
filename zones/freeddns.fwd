@@ -4,7 +4,7 @@
 $TTL 2d
 $ORIGIN linkon.freeddns.org.
 @ IN SOA ns1.linkon.freeddns.org. admin.linkon.freeddns.org. (
-		2026021701	; serial number
+		2026022001	; serial number
 		2h        	; refresh =  2 hours
 		15m       	; update retry = 15 minutes
 		4w        	; expiry = 3 weeks + 12 hours

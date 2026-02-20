@@ -6,7 +6,7 @@ $TTL 2d         ; default time to live
 
 $ORIGIN 168.192.in-addr.arpa.  ; default zone domain
 @       IN SOA ns1.linkon.freeddns.org. admin.linkon.freeddns.org. (
-                2026021201  ; serial number
+                2026022001  ; serial number
                 1d          ; Refresh every 1d
                 4h          ; update retry every 4hour
                 4W          ; Expire in 4 weeks

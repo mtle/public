@@ -5,7 +5,7 @@ $TTL 2d
 
 $ORIGIN linkon.dedyn.io.
 @ IN SOA ns1.linkon.dedyn.io. admin.linkon.dedyn.io. (
-		2026021701	; serial number
+		2026022001	; serial number
 		2h        	; refresh =  2 hours
 		15m       	; update retry = 15 minutes
 		4w        	; expiry = 3 weeks + 12 hours
