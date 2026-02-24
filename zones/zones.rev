@@ -6,7 +6,7 @@ $TTL 2d         ; default time to live
 
 $ORIGIN 168.192.in-addr.arpa.  ; default zone domain
 @       IN SOA ns1.linkon.freeddns.org. admin.linkon.freeddns.org. (
-                2026022001  ; serial number
+                2026022400  ; serial number
                 1d          ; Refresh every 1d
                 4h          ; update retry every 4hour
                 4W          ; Expire in 4 weeks
@@ -30,7 +30,7 @@ $ORIGIN 11.168.192.in-addr.arpa.
 13     IN       PTR     tpe1021ws.linkon.freeddns.org.
 12     IN       PTR     yulinca.linkon.freeddns.org.
 11     IN       PTR     gs724tv4.linkon.freeddns.org.
-8      IN       PTR     kabini.linkon.freeddns.org.
+6      IN       PTR     kabini.linkon.freeddns.org.
 5      IN       PTR     x86.linkon.freeddns.org.
 
 ; aliases
@@ -52,7 +52,7 @@ $ORIGIN 5.168.192.in-addr.arpa.
 29     IN       PTR     pve.linkon.dedyn.io.
 14     IN       PTR     hicomdata.linkon.dedyn.io.
 13     IN       PTR     tpe1021ws.linkon.dedyn.io.
-8      IN       PTR     kabini.linkon.dedyn.io.
+6      IN       PTR     kabini.linkon.dedyn.io.
 5      IN       PTR     x86.linkon.dedyn.io.
 
 ; aliases

@@ -4,7 +4,7 @@
 $TTL 2d
 $ORIGIN linkon.freeddns.org.
 @ IN SOA ns1.linkon.freeddns.org. admin.linkon.freeddns.org. (
-		2026022001	; serial number
+		2026022400	; serial number
 		2h        	; refresh =  2 hours
 		15m       	; update retry = 15 minutes
 		4w        	; expiry = 3 weeks + 12 hours
@@ -16,7 +16,7 @@ $ORIGIN linkon.freeddns.org.
 
 ; Name servers: NS records
                IN      NS      ns1.linkon.freeddns.org.
-ns1            IN      A       192.168.11.8
+ns1            IN      A       192.168.11.6
 
 ; A records:
 
@@ -26,7 +26,7 @@ hicomdata      IN      A       192.168.11.231
 tpe1021ws      IN      A       192.168.11.231
 yulinca        IN      A       192.168.11.231
 gs724tv4       IN      A       192.168.11.231
-kabini         IN      A       192.168.11.8
+kabini         IN      A       192.168.11.6
 x96            IN      A       192.168.11.5
 fw2            IN      A       192.168.11.4
 fw             IN      A       192.168.11.2
