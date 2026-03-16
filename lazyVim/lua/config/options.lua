@@ -17,6 +17,8 @@ wo.numberwidth = 6
 local opt = vim.opt
 opt.modeline = true
 opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
 
 ----------------------------------------------------------------------------
 -- Backup

@@ -7,18 +7,19 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 -- $Id lua/config/autocmds.lua
--- vim:set ts=2 sw=2 sts=2:
 --
 
 -----------------------------------------------------------------------------
 -- Terminal
 -----------------------------------------------------------------------------
+--[[
 function _G.__split_term_right()
-    execute('botright vsplit term://$SHELL')
-    execute('setlocal nonumber')
-    execute('setlocal norelativenumber')
-    execute('startinsert')
+  execute('botright vsplit term://$SHELL')
+  execute('setlocal nonumber')
+  execute('setlocal norelativenumber')
+  execute('startinsert')
 end
+--]]
 
 local cmd = vim.cmd
 
@@ -37,24 +38,24 @@ cmd [[autocmd BufWinEnter,WinEnter term://* startinsert]]
 -----------------------------------------------------------------------------
 -- Auto format
 -----------------------------------------------------------------------------
-vim.api.nvim_exec([[
+vim.api.nvim_exec2([[
 augroup auto_spellcheck
     autocmd!
     autocmd BufNewFile,BufRead *.md setlocal spell
     autocmd BufNewFile,BufRead *.org setfiletype markdown
     autocmd BufNewFile,BufRead *.org setlocal spell
 augroup END
-]], false)
+]], { output = false })
 
-vim.api.nvim_exec([[
+vim.api.nvim_exec2([[
 augroup auto_term
     autocmd!
     autocmd TermOpen * setlocal nonumber norelativenumber
     autocmd TermOpen * startinsert
 augroup END
-]], false)
+]], { output = false })
 
-vim.api.nvim_exec([[
+vim.api.nvim_exec2([[
     fun! TrimWhitespace()
         let l:save = winsaveview()
         keeppatterns %s/\s\+$//e
@@ -62,7 +63,7 @@ vim.api.nvim_exec([[
     endfun
 
     autocmd BufWritePre * :call TrimWhitespace()
-]], false)
+]], { output = false })
 
 -----------------------------------------------------------------------------
 -- Buffers
@@ -79,3 +80,5 @@ cmd 'au BufRead,BufNewFile *.py set expandtab'
 cmd 'au BufRead,BufNewFile *.c set noexpandtab'
 cmd 'au BufRead,BufNewFile *.h set noexpandtab'
 cmd 'au BufRead,BufNewFile Makefile* setlocal ts=8 sts=8 sw=8 set noexpandtab'
+
+-- vim:set ts=2 sw=2 sts=2:
