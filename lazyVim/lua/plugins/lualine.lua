@@ -1,6 +1,5 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
+-- lua/plugins/lualine.lua
+-- vim:set ts=2 sw=2 sts=2 et:
 
 -- local lualine = require('lualine')
 
@@ -47,6 +46,7 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
+    --    theme = "catppuccin",
   },
   sections = {
     -- these are to remove the defaults
@@ -98,13 +98,13 @@ ins_left {
       n = colors.red,
       i = colors.green,
       v = colors.blue,
-      [''] = colors.blue,
+      [''] = colors.blue,
       V = colors.blue,
       c = colors.magenta,
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
-      [''] = colors.orange,
+      [''] = colors.orange,
       ic = colors.yellow,
       R = colors.violet,
       Rv = colors.violet,
@@ -156,6 +156,7 @@ ins_left {
   end,
 }
 
+--[[
 ins_left {
   -- Lsp server name .
   function()
@@ -176,6 +177,7 @@ ins_left {
   icon = ' LSP:',
   color = { fg = '#ffffff', gui = 'bold' },
 }
+]]
 
 -- Add components to right sections
 ins_right {
