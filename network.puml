@@ -1,0 +1,132 @@
+@startuml
+'!theme metal
+
+'skinparam titleBorderRoundCorner 15
+'skinparam titleBorderThickness 2
+'skinparam titleBorderColor red
+'skinparam titleBackgroundColor Aqua-CadetBlue
+
+'skinparam linetype polyline
+skinparam linetype ortho
+
+<style>
+  title {
+    BackgroundColor #F0F0F0
+    FontColor #007ACC
+    FontSize 28
+    FontStyle bold
+    HorizontalAlignment center
+    'BorderRoundCorner 15
+    'BorderThickness 2
+    'BorderColor red
+    'BackgroundColor Aqua-CadetBlue
+  }
+
+</style>
+
+title
+ Network connections
+end title
+
+/'
+skinparam component<<Invisible>> {
+    borderColor Transparent
+    backgroundColor Transparent
+    fontColor Transparent
+}
+
+component "I am visible" as VisibleNode
+component "I am hidden" as HiddenNode <<Invisible>>
+component "I am also visible" as AnotherVisibleNode
+
+' The layout is still affected by the presence of HiddenNode'
+VisibleNode --> HiddenNode
+HiddenNode --> AnotherVisibleNode
+'/
+
+!include <osa2/Common>
+!include <osa2/Hardware/all>
+!include <osa2/User/all>
+!include <osa2/Misc/all>
+!include <osa2/Server/all>
+!include <osa2/Site/all>
+'listsprites
+
+hide stereotype
+
+
+' Users
+'osa_user_green_developer(Mary, "Mary", "Product team", "Developer")
+'osa_user_green_operations(Ivan, "Ivan", "IT Team", "Server Admin")
+'osa_user_green_business_manager(Bob, "Bob", "Accounts team", "Manager")
+
+' Wireless networks
+together {
+osa_wireless_network(wildwildweb,"wildwildweb","5G")
+osa_wireless_network(worldwildweb,"worldwildweb","5G")
+osa_wireless_network(worldwildiot,"worldwildiot","2.4G")
+}
+
+' Wireless APs
+together {
+osa_device_wireless_router(GRN, "Green", "ADM.21", "eap723")
+osa_device_wireless_router(YEL, "Yellow", "ADM.22", "eap723")
+osa_device_wireless_router(RED, "Red", "ADM.23", "eap245")
+}
+
+' Devices
+together {
+'osa_desktop(pc, "192.168.1.10", "Windows 10", "PC")
+'osa_laptop(mac, "192.168.1.12", "Mac", "Mac")
+'osa_iPhone(iphone, "Dynamic IP", "iPhone 11", "Phone")
+'osa_iPhone(android, "Dynamic IP", "Android 10", "Phone")
+}
+
+' Servers
+together {
+osa_server_terminal(x96, "x96", "*.10", "Debian")
+osa_server_terminal(kabini, "kabini", "*.9", "Debian")
+}
+
+' Switches
+together {
+osa_hub(lianguo, "lianguo", "ADM.15", "2.5G")
+osa_hub(trendNet, "TrendNet", "ADM.13", "1G")
+osa_hub(netgear, "Netgear", "ADM.11", "1G")
+}
+together {
+osa_hub(yulinca, "yulinca", "ADM.12", "2.5G")
+osa_hub(hiComp, "Optical", "ADM.14"," 10G Optical")
+}
+together {
+osa_firewall(firewall, "pfSense", "*.1", "Intel N100")
+osa_cloud(cloud, "Internet", "Fiber")
+}
+
+cloud --[thickness=2]r-- firewall
+firewall "trunk" -[#blue,thickness=4]d- yulinca
+
+kabini "trunk" -[#blue,thickness=4]u- yulinca
+x96 "trunk" -[#blue,thickness=4]u- yulinca
+
+hiComp "trunk" --[#blue,thickness=4]l- yulinca: <color:red><b>10Gbps</color>
+hiComp "trunk" -[#blue,thickness=4]d- lianguo: <color:red><b>10Gbps</color>
+hiComp "trunk" -[#blue,thickness=4]d- netgear: <color:red><b>1Gbps</color>
+hiComp "trunk" -[#blue,thickness=4]d- trendNet: <color:red><b>1Gbps</color>
+
+lianguo "trunk" -[#blue,thickness=4]d- "POE" GRN
+lianguo "trunk" -[#blue,thickness=4]d- "POE" YEL
+lianguo "trunk" -[#blue,thickness=4]d- "POE" RED
+
+wildwildweb -[#red]u- GRN
+worldwildweb -[#green]u- GRN
+worldwildiot -[#cyan]u- GRN
+wildwildweb -[#red]u- YEL
+worldwildweb -[#green]u- YEL
+worldwildiot -[#cyan]u- YEL
+wildwildweb -[#red]u- RED
+worldwildweb -[#green]u- RED
+worldwildiot -[#cyan]u- RED
+
+footer rendered with PlantUML version %version()\nML
+@enduml
