@@ -147,14 +147,14 @@ Go to *VPN* → *WireGuard* → *Tunnels* and create a new tunnel with the follo
 |---|---|
 |`Description`| tun_proton|
 |`Listen port`| 51820 *change to a different number if needed*|
-|`Interface Keys`| Private key from [the sample configuration](#Sample-Wireguard-configuration)|
+|`Interface Keys`| [Enter private key](#Sample-Wireguard-configuration)|
 |`Public key`| This will be automatically generated|
 
 #### Interface configuration
 
 |Field|Value|
 |---|---|
-|`Interface Addresses`| 10.2.0.2/32 [From sample config](#Sample-Wireguard-configuration)|
+|`Interface Addresses`| 10.2.0.2/32 [e.g. sample config](#Sample-Wireguard-configuration)|
 Click *Save* Tunnel when done. <br/>
 
 
@@ -165,18 +165,19 @@ Click *Save* Tunnel when done. <br/>
 |---|---|
 |`Enable`| :white_check_mark: `Enable`|
 |`Tunnel`| [tun_proton](#Tunel_Configuration)|
-|`Description`| choose a descriptive name, for example, the server name|
+|`Description`| e.g. peer_proton |
 |`Dynamic Endpoint`| uncheck|
-|`Endpoint`| endpoint IP address from your downloaded WireGuard configuration|
+|`Endpoint`| [endpoint IP from VPN provider configuration file](#Sample-Wireguard-configuration)|
 |`Port`| 51820|
 |`Keep Alive`| 25|
-|`Public Key`| public key from your downloaded WireGuard configuration file (see above)|
+|`Public Key`| [public key from VPN provider configuration file](#Sample-Wireguard-configuration)|
 
 #### Address Configuration
 
 |Field|Value|
 |---|---|
 |`Allowed IPs`| 0.0.0.0/0|
+
 Click *Save* Peer when done. <br/>
 
 ## Enable Wireguard
