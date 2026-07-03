@@ -55,8 +55,8 @@ Default <br/>
 
 |Name|Members|Decription|
 |---|---|---|
-|safe_ifs|LAN, VPN_CA, VPN_VN|safe_interfaces|
-|local_ifs|LAN, VPN_CA, VPN_VN, PUB, IOT||
+|safe_ifs|LAN, VPN_CA, VPN_VN|mgmt/safe interfaces|
+|local_ifs|LAN, VPN_CA, VPN_VN, PUB, IOT|all local interfaces|
 
 
 ## Firewall
@@ -92,15 +92,15 @@ Select `Firewall` -> `Rules` -> `select an interface`
 ## Services
 ### DNS Resolver
 #### General settings:
-`Enable`: :white_check_mark: `Enable DNS resolver` <br/>
-`Network Interfaces`: select localhost + all local/vlan interfaces <br/>
-`Outgoing Network Interfaces`: select `WAN/PPPoE` <br/>
-`Strict Outgoing Network Interface Binding`: :white_check_mark: `Do not send recursive queries if none of the selected Outgoing Network Interfaces are available.` <br/>
-`DNSSEC`: :white_check_mark: `enable DNSSEC Support` <br/>
-`DNS Query Forwarding`: <br/>
+|`Enable`| :white_check_mark: `Enable DNS resolver`|
+|`Network Interfaces`| select localhost + all local/vlan interfaces|
+|`Outgoing Network Interfaces`| select `WAN/PPPoE`|
+|`Strict Outgoing Network Interface Binding`| :white_check_mark: `Do not send recursive queries if none of the selected Outgoing Network Interfaces are available.`|
+|`DNSSEC`| :white_check_mark: `enable DNSSEC Support`|
+|`DNS Query Forwarding`|
 :white_check_mark: `Enable Forwarding Mode` <br/>
 :white_check_mark: `Use SSL/TLS for outgoing DNS Queries to Forwarding Servers` <br/>
-`Custom options`:
+|`Custom options`|
 ```
 server:
 module-config: "respip validator iterator"
@@ -111,6 +111,7 @@ include: "/usr/local/etc/unbound/custom_auth_zones.conf"
 ```
 ```
 ```
+|
 
 # Wireguard VPN
 
@@ -135,30 +136,30 @@ Endpoint = 149.22.81.28:51820
 Go to VPN → WireGuard → Tunnels and create a new tunnel with the following settings. <br/>
 
 #### Tunnel configuration:
-`Description`: Choose a suitable description <br/>
-`Listen port`: 51820 <br/>
-`Interface Keys`: Private key from the configuration file (see above) <br/>
-`Public key`: This will be automatically generated <br/>
+|`Description`| Choose a suitable description|
+|`Listen port`| 51820|
+|`Interface Keys`| Private key from the configuration file (see above)|
+|`Public key`| This will be automatically generated|
 
 #### Interface configuration:
 
-`Interface Addresses`: 10.2.0.2/32 <br/>
+|`Interface Addresses`| 10.2.0.2/32|
 Click *Save* Tunnel when done. <br/>
 
 
 ## Add peer
 #### Peer Configuration:
-`Enable`: :white_check_mark: `Enable` <br/>
-`Tunnel`: the tunnel created in the previous step <br/>
-`Description`: choose a descriptive name, for example, the server name <br/>
-`Dynamic Endpoint`: uncheck <br/>
-`Endpoint`: endpoint IP address from your downloaded WireGuard configuration <br/>
-`Port`: 51820 <br/>
-`Keep Alive`: 25 <br/>
-`Public Key`: public key from your downloaded WireGuard configuration file (see above) <br/>
+|`Enable`| :white_check_mark: `Enable`|
+|`Tunnel`| the tunnel created in the previous step|
+|`Description`| choose a descriptive name, for example, the server name|
+|`Dynamic Endpoint`| uncheck|
+|`Endpoint`| endpoint IP address from your downloaded WireGuard configuration|
+|`Port`| 51820|
+|`Keep Alive`| 25|
+|`Public Key`| public key from your downloaded WireGuard configuration file (see above)|
 
 #### Address Configuration:
-`Allowed IPs`: 0.0.0.0/0 <br/>
+|`Allowed IPs`| 0.0.0.0/0|
 Click *Save* Peer when done. <br/>
 
 
