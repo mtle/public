@@ -15,18 +15,18 @@
 |`override DNS`| `uncheck`|
 |`DNS Resolution Behavior`| `Use local, ignore remote`|
 
-#### Localization:
+#### Localization
 
 |Field|Value|
 |---|---|
 |`Timezone`| select `UTC`|
 |`Timeservers`| add `ntp1.torix.ca time.nrc.ca`|
 
-#### webConfigurator:
+#### webConfigurator
 Default <br/>
 
 ### Advanced
-#### Admin Access:
+#### Admin Access
 
 |Field|Value|
 |---|---|
@@ -34,13 +34,13 @@ Default <br/>
 |`ssh`| `enable`|
 |`sshd key only`| `public key only`|
 
-#### Networking:
+#### Networking
 
 |Field|Value|
 |---|---|
 |`Use if_pppoe kernel module for PPPoE client`| :white_check_mark: `Use if_pppoe kernel module for PPPoE client`|
 
-#### Miscellaneous:
+#### Miscellaneous
 
 |Field|Value|
 |---|---|
@@ -54,7 +54,7 @@ Default <br/>
 |`RAM Disk Size`| set [1024] `/tmp`, and [4096] `/var`|
 
 ## Interfaces
-### VLANs:
+### VLANs
 `Interfaces` -> `Assignment` -> `VLANs`: Add <br/>
 
 |Interface|VLAN tag| Priority|Description|
@@ -67,7 +67,7 @@ Default <br/>
 |re0|40||primus_pppoe|
 
 
-### Interface groups:
+### Interface groups
 `Interfaces` -> `Assignment` -> `Interface Groups`: Add
 
 |Name|Members|Decription|
@@ -77,7 +77,7 @@ Default <br/>
 
 
 ## Firewall
-### Aliases:
+### Aliases
 #### Firewall Aliases IP
 |Name|Type|Values|Decription|
 |---|---|---|---|
@@ -90,16 +90,16 @@ Default <br/>
 |anti_lockout_ports|Port(s)|443, 22|Anti-lockout|
 |wireguard_ports|Port(s)|51820, 51821, 51822|wireguard_ports|
 
-### Rules:
-#### Group rules:
-Select `Firewall` -> `Rules` -> `local_ifs` <br/
+### Rules
+#### Group rules
+Select `Firewall` -> `Rules` -> `local_ifs` <br/>
 |Protocol|Source|Port|Destination|Port|Gateway|Description|
 |---|---|---|---|---|---|---|
 |IPv4 TCP|safe_interfaces networks| * |This Firewall (self)|anti_lockout_ports| * |Anti-lockout rule|
 |IPv4 ICMP| echoreq |safe_interfaces networks| * |This Firewall (self)| * |Allow echo requests|
 |IPv4 TCP/UDP|local_ifs networks|* |This Firewall (self)|53 (DNS)|* |Allow DNS requests|
 
-#### Interface rules:
+#### Interface rules
 Select `Firewall` -> `Rules` -> `select an interface`
 |Protocol|Source|Port|Destination|Port|Gateway|Description|
 |---|---|---|---|---|---|---|
@@ -108,7 +108,7 @@ Select `Firewall` -> `Rules` -> `select an interface`
 
 ## Services
 ### DNS Resolver
-#### General settings:
+#### General settings
 
 |Field|Value|
 |---|---|
@@ -123,7 +123,7 @@ Select `Firewall` -> `Rules` -> `select an interface`
 
 # Wireguard VPN
 
-Sample Wireguard configuration fromProtonvpn <br/>
+#### Sample Wireguard configuration
 ```
 [Interface]
 # Key for ca-free
@@ -139,32 +139,32 @@ Endpoint = 149.22.81.28:51820
 ```
 
 ## Add tunnel
-Go to VPN → WireGuard → Tunnels and create a new tunnel with the following settings. <br/>
+Go to *VPN* → *WireGuard* → *Tunnels* and create a new tunnel with the following settings. <br/>
 
-#### Tunnel configuration:
+#### Tunnel configuration
 
 |Field|Value|
 |---|---|
-|`Description`| Choose a suitable description|
-|`Listen port`| 51820|
-|`Interface Keys`| Private key from the configuration file (see above)|
+|`Description`| tun_proton|
+|`Listen port`| 51820 *change to a different number if needed*|
+|`Interface Keys`| Private key from [the sample configuration](#Sample-Wireguard-configuration)|
 |`Public key`| This will be automatically generated|
 
-#### Interface configuration:
+#### Interface configuration
 
 |Field|Value|
 |---|---|
-|`Interface Addresses`| 10.2.0.2/32|
+|`Interface Addresses`| 10.2.0.2/32 [From sample config](#Sample-Wireguard-configuration)|
 Click *Save* Tunnel when done. <br/>
 
 
 ## Add peer
-#### Peer Configuration:
+#### Peer Configuration
 
 |Field|Value|
 |---|---|
 |`Enable`| :white_check_mark: `Enable`|
-|`Tunnel`| the tunnel created in the previous step|
+|`Tunnel`| [tun_proton](#Tunel_Configuration)|
 |`Description`| choose a descriptive name, for example, the server name|
 |`Dynamic Endpoint`| uncheck|
 |`Endpoint`| endpoint IP address from your downloaded WireGuard configuration|
@@ -172,7 +172,7 @@ Click *Save* Tunnel when done. <br/>
 |`Keep Alive`| 25|
 |`Public Key`| public key from your downloaded WireGuard configuration file (see above)|
 
-#### Address Configuration:
+#### Address Configuration
 
 |Field|Value|
 |---|---|
@@ -190,7 +190,7 @@ Go to *Interfaces* → *Interface Assignments* → *Available network ports* and
 
 This will create an interface named `OPTx`. Click on the newly created one to configure it.
 
-##### General configuration:
+##### General configuration
 
 |Field|Value|
 |---|---|
@@ -199,7 +199,7 @@ This will create an interface named `OPTx`. Click on the newly created one to co
 |IPv4 configuration type| Static IPv4|
 |IPv6 Configuration Type| None|
 
-##### Static IPv4 configuration:
+##### Static IPv4 configuration
 
 |Field|Value|
 |---|---|
@@ -286,4 +286,6 @@ Now go to *Services* → *DNS Resolver* → *General Settings* and change the fo
 |Outgoing Network Interfaces| [WG_proton](#Create-a-Wireguard_interface)|
 |DNS Query Forwarding| check Enable Forwarding mode|
 Click *Save* and *Apply Changes*.
+
+=== DONE ===
 
