@@ -184,6 +184,60 @@ Click *Save* Tunnel when done. <br/>
 |`Allowed IPs`| 0.0.0.0/0|
 Click *Save* Peer when done. <br/>
 
+## Enable Wireguard
+Go to the *Settings* tab, check *Enable WireGuard*, then click *Save* and *Apply Changes*.<br/>
 
+## Create a WireGuard interface
+The VPN client is now running, but no traffic is being routed through it. <br/>
+Configure the Interfaces and Firewall rules to route network traffic through the VPN tunnel.
 
+Go to *Interfaces* → *Interface Assignments* → *Available network ports* and select tun_wg? → Add.
+
+This will create an interface named `OPTx`. Click on the newly created one to configure it.
+
+##### General configuration:
+| | |
+|---|---|
+|Enable| checked|
+|IPv4 configuration type| Static IPv4|
+|IPv6 Configuration Type| None|
+
+##### Static IPv4 configuration:
+| | |
+|---|---|
+|IPv4 address|10.2.0.2/32|
+
+Click *Save* and *Apply*.
+
+## Add a new gateway
+Go to *System* → *Routing* → *Gateways* and click *Add* to add a new gateway.
+
+| | |
+|Interface| OPTx (or name of the interface from the previous [step](#Create-a-WireGuard-interface))|
+|Address Family| ipv4|
+|Name| descriptive name|
+|Gateway| 10.2.0.1|
+
+Click *Display Advanced* and check *Use non-local gateway*.
+| | |
+|*Use non-local gateway*| :white_check_mark: *Use non-local gateway through interface specific route*|
+
+Click *Save* and *Apply Changes*.
+
+##  Firewall rules
+### Outbound NAT Mode
+#### Set Outbound NAT Mode to **Hybrid** or **Manual**
+Go to *Firewall* → *NAT* → *Outbound* and select *Manual Outbound NAT rule generation* or *Hybrid Outbound NAT rule generation*. <br/>
+Click *Save* and *Apply Changes*. <br/>
+
+### New Mappings
+Under `Mappings` click `Add` <br/>
+
+`Edit Advanced Outbound NAT Entry:``
+|||
+|Interface| select the interface |
+|Source|`Network or Alias` -> choose one in `192.168.x.y` |
+
+### Interface rule
+#### Set Interface gateway
 
