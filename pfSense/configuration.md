@@ -117,8 +117,8 @@ Select `Firewall` -> `Rules` -> `select an interface`
 |`Outgoing Network Interfaces`| select `WAN/PPPoE`|
 |`Strict Outgoing Network Interface Binding`| :white_check_mark: `Do not send recursive queries if none of the selected Outgoing Network Interfaces are available.`|
 |`DNSSEC`| :white_check_mark: `enable DNSSEC Support`|
-|`DNS Query Forwarding`|<code> :white_check_mark: `Enable Forwarding Mode` <br> :white_check_mark: `Use SSL/TLS for outgoing DNS Queries to Forwarding Servers`</code>|
-|`Custom options`|<code>server:<br>module-config: "respip validator iterator"<br>include: "/usr/local/etc/unbound/custom_server.conf"<br>include: "/usr/local/etc/unbound/custom_auth_zones.conf"</code>|
+|`DNS Query Forwarding`| :white_check_mark: `Enable Forwarding Mode` <br> :white_check_mark: `Use SSL/TLS for outgoing DNS Queries to Forwarding Servers`|
+|`Custom options`|server:<br>module-config: "respip validator iterator"<br>include: "/usr/local/etc/unbound/custom_server.conf"<br>include: "/usr/local/etc/unbound/custom_auth_zones.conf"|
 ```
 ```
 |
