@@ -119,15 +119,12 @@ Select `Firewall` -> `Rules` -> `select an interface`
 |`DNSSEC`| :white_check_mark: `enable DNSSEC Support`|
 |`DNS Query Forwarding`| :white_check_mark: `Enable Forwarding Mode` <br> :white_check_mark: `Use SSL/TLS for outgoing DNS Queries to Forwarding Servers`|
 |`Custom options`|server:<br>module-config: "respip validator iterator"<br>include: "/usr/local/etc/unbound/custom_server.conf"<br>include: "/usr/local/etc/unbound/custom_auth_zones.conf"|
-```
-```
-|
+
 
 # Wireguard VPN
 
 Sample Wireguard configuration fromProtonvpn <br/>
 ```
-
 [Interface]
 # Key for ca-free
 PrivateKey = <enter private key>
@@ -139,7 +136,6 @@ DNS = 10.2.0.1
 PublicKey = rROokcTHabt9RJ++V8yfCelZVznfMZDLENtn8X1sLVA=
 AllowedIPs = 0.0.0.0/0
 Endpoint = 149.22.81.28:51820
-
 ```
 
 ## Add tunnel
