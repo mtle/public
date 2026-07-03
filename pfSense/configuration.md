@@ -11,7 +11,7 @@
 | | |
 |---|---|
 |`DNS servers` | `1.1.1.3 9.9.9.9`|
-|`override DNS`| `un:white_check_mark:`|
+|`override DNS`| `uncheck`|
 |`DNS Resolution Behavior`| `Use local, ignore remote`|
 
 #### Localization:
@@ -111,18 +111,18 @@ Select `Firewall` -> `Rules` -> `select an interface`
 |`Outgoing Network Interfaces`| select `WAN/PPPoE`|
 |`Strict Outgoing Network Interface Binding`| :white_check_mark: `Do not send recursive queries if none of the selected Outgoing Network Interfaces are available.`|
 |`DNSSEC`| :white_check_mark: `enable DNSSEC Support`|
-|`DNS Query Forwarding`|
+|`DNS Query Forwarding`|<code>
 :white_check_mark: `Enable Forwarding Mode` <br/>
 :white_check_mark: `Use SSL/TLS for outgoing DNS Queries to Forwarding Servers` <br/>
-|`Custom options`|
-```
+</code>|
+|`Custom options`|<code>
 server:
 module-config: "respip validator iterator"
 
 include: "/usr/local/etc/unbound/custom_server.conf"
 
 include: "/usr/local/etc/unbound/custom_auth_zones.conf"
-```
+</code>
 ```
 ```
 |
