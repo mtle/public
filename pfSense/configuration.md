@@ -2,20 +2,17 @@
 
 ## System
 ### General setup
-| | |
 |---|---|
 |`hostname` | `fw`|
 |`domain` | `linkon.dedyn.io`|
 
 #### DNS server settings:
-| | |
 |---|---|
 |`DNS servers` | `1.1.1.3 9.9.9.9`|
 |`override DNS`| `uncheck`|
 |`DNS Resolution Behavior`| `Use local, ignore remote`|
 
 #### Localization:
-| | |
 |---|---|
 |`Timezone`| select `UTC`|
 |`Timeservers`| add `ntp1.torix.ca time.nrc.ca`|
@@ -25,19 +22,16 @@ Default <br/>
 
 ### Advanced
 #### Admin Access:
-| | |
 |---|---|
 |`Protocol`| select `https`|
 |`ssh`| `enable`|
 |`sshd key only`| `public key only`|
 
 #### Networking:
-| | |
 |---|---|
 |`Use if_pppoe kernel module for PPPoE client`| :white_check_mark: `Use if_pppoe kernel module for PPPoE client`|
 
 #### Miscellaneous:
-| | |
 |---|---|
 |`PowerD`| enable|
 |`AC power`| `hiadaptive`|
@@ -104,7 +98,6 @@ Select `Firewall` -> `Rules` -> `select an interface`
 ## Services
 ### DNS Resolver
 #### General settings:
-| | |
 |---|---|
 |`Enable`| :white_check_mark: `Enable DNS resolver`|
 |`Network Interfaces`| select localhost + all local/vlan interfaces|
@@ -150,7 +143,6 @@ Endpoint = 149.22.81.28:51820
 Go to VPN → WireGuard → Tunnels and create a new tunnel with the following settings. <br/>
 
 #### Tunnel configuration:
-| | |
 |---|---|
 |`Description`| Choose a suitable description|
 |`Listen port`| 51820|
@@ -159,7 +151,6 @@ Go to VPN → WireGuard → Tunnels and create a new tunnel with the following s
 
 #### Interface configuration:
 
-| | |
 |---|---|
 |`Interface Addresses`| 10.2.0.2/32|
 Click *Save* Tunnel when done. <br/>
@@ -167,7 +158,6 @@ Click *Save* Tunnel when done. <br/>
 
 ## Add peer
 #### Peer Configuration:
-| | |
 |---|---|
 |`Enable`| :white_check_mark: `Enable`|
 |`Tunnel`| the tunnel created in the previous step|
@@ -179,7 +169,6 @@ Click *Save* Tunnel when done. <br/>
 |`Public Key`| public key from your downloaded WireGuard configuration file (see above)|
 
 #### Address Configuration:
-| | |
 |---|---|
 |`Allowed IPs`| 0.0.0.0/0|
 Click *Save* Peer when done. <br/>
@@ -196,14 +185,13 @@ Go to *Interfaces* → *Interface Assignments* → *Available network ports* and
 This will create an interface named `OPTx`. Click on the newly created one to configure it.
 
 ##### General configuration:
-| | |
 |---|---|
 |Enable| checked|
+|Description| *WG_proton* |
 |IPv4 configuration type| Static IPv4|
 |IPv6 Configuration Type| None|
 
 ##### Static IPv4 configuration:
-| | |
 |---|---|
 |IPv4 address|10.2.0.2/32|
 
@@ -212,17 +200,24 @@ Click *Save* and *Apply*.
 ## Add a new gateway
 Go to *System* → *Routing* → *Gateways* and click *Add* to add a new gateway.
 
-| | |
+|--- |--- |
 |Interface| OPTx (or name of the interface from the previous [step](#Create-a-WireGuard-interface))|
 |Address Family| ipv4|
 |Name| descriptive name|
 |Gateway| 10.2.0.1|
 
 Click *Display Advanced* and check *Use non-local gateway*.
-| | |
+|--- |--- |
 |*Use non-local gateway*| :white_check_mark: *Use non-local gateway through interface specific route*|
 
 Click *Save* and *Apply Changes*.
+
+|Name|Default|Interface|Gateway|Monitor IP|Description|
+|---|---|---|---|---|---|
+|WAN_DHCP| |WAN|dynamic|dynamic|Interface WAN_DHCP Gateway|
+|WAN_DHCP6| |WAN|dynamic|dynamic|Interface WAN_DHCP6 Gateway|
+|proton_gw| |PROTON|10.2.11.1|1.1.1.1|proton ca-free gw|
+|wg_ca_gw| |WG_CA|10.14.5.1|1.1.1.3|wireguard ca gw|
 
 ##  Firewall rules
 ### Outbound NAT Mode
@@ -234,10 +229,41 @@ Click *Save* and *Apply Changes*. <br/>
 Under `Mappings` click `Add` <br/>
 
 `Edit Advanced Outbound NAT Entry:``
-|||
+|---|---|
 |Interface| select the interface |
 |Source|`Network or Alias` -> choose one in `192.168.x.y` |
 
+|Interface|Source|Source Port|Destination|Destination Port|NAT Address|NAT Port|Static Port|Description|
+|---|---|---|---|---|---|---|---|---|
+|WAN|127.0.0.0/8| * | * |500 (ISAKMP)|WAN address| * | |Auto created rule for ISAKMP - localhost to WAN
+|PROTON|192.168.11.0/24|*|*|500 (ISAKMP)|WAN address|*| |PROTON to WAN|
+|PROTON|192.168.11.0/24|*|*|*|WAN address|*| |PROTON to WAN|
+
 ### Interface rule
-#### Set Interface gateway
+#### WG Interface gateway
+`Interface` -> select the WG interface created in [*Create a WireGuard interface*](#Create-a-WireGuard-interface)
+|Static IPv4 Configuration| |
+|IPv4 Upstream gateway| select the GW in [*Add a new gateway*](#Add-a-new-gateway) |
+
+#### Local interface rule
+*Firewall* → *Rules* → *if/vlan_if* → *Allow to Internet rule* → *Edit (pencil icon)*.
+Click *Display advanced* → *Gateway* and select the gateway created in [*Add a new gateway*](#Add-a-new-gateway).
+Click *Save* and *Apply Changes*.
+
+### DNS Settings
+All internet traffic passing through the pfSense firewall will now be routed through the VPN server. However, DNS requests are not. To fix this, we need to change the DNS settings in pfSense. <br/>
+
+In pfSense, go to *System* → *General setup* → *DNS Server Settings* and configure the following settings:
+|---|
+|DNS Servers| 10.2.0.1 [*see here*](#Static-IPv4-configuration)|
+|Gateway| the name of the gateway we configured in [*Add a new gateway*](#add-a-new-gateway)|
+|DNS Server Override| unchecked|
+
+Click *Save*.
+
+Now go to *Services* → *DNS Resolver* → *General Settings* and change the following:
+|---|---|
+|Outgoing Network Interfaces| [WG_proton](#Create-a-Wireguard_interface)|
+|DNS Query Forwarding| check Enable Forwarding mode|
+Click *Save* and *Apply Changes*.
 
