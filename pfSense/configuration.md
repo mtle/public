@@ -2,39 +2,51 @@
 
 ## System
 ### General setup
-`hostname` : `fw` <br/>
-`domain` : `linkon.dedyn.io` <br/>
+| | |
+|---|---|
+|`hostname` | `fw`|
+|`domain` | `linkon.dedyn.io`|
 
 #### DNS server settings:
-`DNS servers` : `1.1.1.3 9.9.9.9` <br/>
-`override DNS`: `un:white_check_mark:` <br/>
-`DNS Resolution Behavior`: `Use local, ignore remote` <br/>
+| | |
+|---|---|
+|`DNS servers` | `1.1.1.3 9.9.9.9`|
+|`override DNS`| `un:white_check_mark:`|
+|`DNS Resolution Behavior`| `Use local, ignore remote`|
 
 #### Localization:
-`Timezone`: select `UTC` <br/>
-`Timeservers`: add `ntp1.torix.ca time.nrc.ca` <br/>
+| | |
+|---|---|
+|`Timezone`| select `UTC`|
+|`Timeservers`| add `ntp1.torix.ca time.nrc.ca`|
 
 #### webConfigurator:
 Default <br/>
 
 ### Advanced
 #### Admin Access:
-`Protocol`: select `https` <br/>
-`ssh`: `enable` <br/>
-`sshd key only`: `public key only` <br/>
+| | |
+|---|---|
+|`Protocol`| select `https`|
+|`ssh`| `enable`|
+|`sshd key only`| `public key only`|
 
 #### Networking:
-`Use if_pppoe kernel module for PPPoE client`: :white_check_mark: `Use if_pppoe kernel module for PPPoE client` <br/>
+| | |
+|---|---|
+|`Use if_pppoe kernel module for PPPoE client`| :white_check_mark: `Use if_pppoe kernel module for PPPoE client`|
 
 #### Miscellaneous:
-`PowerD`: enable <br/>
-`AC power`: `hiadaptive` <br/>
-`Battery power`: `hiadaptive` <br/>
-`Unknown power`: `hiadaptive` <br/>
-`Cryptographic Hardware`: `AES-NI CPU based acceleration` <br/>
-`Thermal Sensors`: `* cpu ondie thermal sensor` <br/>
-`Use RAM Disks`: :white_check_mark: `Use memory file system for /tmp and /var` <br/>
-`RAM Disk Size`: set [1024] `/tmp`, and [4096] `/var` <br/>
+| | |
+|---|---|
+|`PowerD`| enable|
+|`AC power`| `hiadaptive`|
+|`Battery power`| `hiadaptive`|
+|`Unknown power`| `hiadaptive`|
+|`Cryptographic Hardware`| `AES-NI CPU based acceleration`|
+|`Thermal Sensor`| `* cpu ondie thermal sensor`|
+|`Use RAM Disks`| :white_check_mark: `Use memory file system for /tmp and /var`|
+|`RAM Disk Size`| set [1024] `/tmp`, and [4096] `/var`|
 
 ## Interfaces
 ### VLANs:
@@ -92,6 +104,8 @@ Select `Firewall` -> `Rules` -> `select an interface`
 ## Services
 ### DNS Resolver
 #### General settings:
+| | |
+|---|---|
 |`Enable`| :white_check_mark: `Enable DNS resolver`|
 |`Network Interfaces`| select localhost + all local/vlan interfaces|
 |`Outgoing Network Interfaces`| select `WAN/PPPoE`|
@@ -136,6 +150,8 @@ Endpoint = 149.22.81.28:51820
 Go to VPN → WireGuard → Tunnels and create a new tunnel with the following settings. <br/>
 
 #### Tunnel configuration:
+| | |
+|---|---|
 |`Description`| Choose a suitable description|
 |`Listen port`| 51820|
 |`Interface Keys`| Private key from the configuration file (see above)|
@@ -143,12 +159,16 @@ Go to VPN → WireGuard → Tunnels and create a new tunnel with the following s
 
 #### Interface configuration:
 
+| | |
+|---|---|
 |`Interface Addresses`| 10.2.0.2/32|
 Click *Save* Tunnel when done. <br/>
 
 
 ## Add peer
 #### Peer Configuration:
+| | |
+|---|---|
 |`Enable`| :white_check_mark: `Enable`|
 |`Tunnel`| the tunnel created in the previous step|
 |`Description`| choose a descriptive name, for example, the server name|
@@ -159,6 +179,8 @@ Click *Save* Tunnel when done. <br/>
 |`Public Key`| public key from your downloaded WireGuard configuration file (see above)|
 
 #### Address Configuration:
+| | |
+|---|---|
 |`Allowed IPs`| 0.0.0.0/0|
 Click *Save* Peer when done. <br/>
 
