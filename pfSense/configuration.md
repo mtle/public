@@ -42,7 +42,7 @@ Default <br/>
 
 >[!TIP]
 >Maximum MSS size of 1420 is good for Wireguard
-
+>[what is mss](https://www.cloudflare.com/learning/network-layer/what-is-mss/)
 
 #### Networking
 
@@ -67,14 +67,16 @@ Default <br/>
 
 |Field|Value|
 |---|---|
-|Console Bell| [&#x2612;] Enable the console bell|
-|Startup/Shutdown Sound| [&#x2611;] Disable the startup/shutdown beep|
+|Console Bell| [ ] Enable the console bell (uncheck)|
+|Startup/Shutdown Sound| :white_check_mark: Disable the startup/shutdown beep|
 
 
 ## Interfaces
+
 ### VLANs
 **Interfaces** -> **Assignment** -> **VLANs**: Add
 
+{#vlans-table .styled}
 |Interface|VLAN tag| Priority|Description|
 |---|---|---|---|
 |ix0|5||vpn_ca|
@@ -83,6 +85,36 @@ Default <br/>
 |ix0|13||pub|
 |ix0|15||iot|
 |re0|40||primus_pppoe|
+
+
+### PPPoE
+#### Create a PPPoE interface
+
+Go to **Interfaces** → **Interface Assignments** → **Available network ports** and select [re.40](#vlan-table) → Add. <br/>
+
+This will create an interface named `OPTx`. Click on the newly created one to configure it.
+
+##### General configuration
+
+|Field|Value|
+|---|---|
+|Enable| checked|
+|Description| *primus* |
+|IPv4 configuration type| pppoe|
+|IPv6 Configuration Type| None|
+|MTU|1492|
+|Advanced and MLPPP|click <div style="background-color: #f8d7da; padding: 10px; border-radius: 5px;"><strong>Advanced and MLPPP</strong></div> and select from **PPPs**|
+|Block private networks and loopback addresses|:white_check_mark:|
+|Block bogon networks|:white_check_mark:|
+
+##### Static IPv4 configuration
+
+|Field|Value|
+|---|---|
+|IPv4 address|10.2.0.2/32|
+
+Click **Save** and **Apply**.
+
 
 
 ### Interface groups
