@@ -34,6 +34,16 @@ Default <br/>
 |`ssh`| `enable`|
 |`sshd key only`| `public key only`|
 
+#### Firewall & NAT
+|Field|Value|
+|---|---|
+|`Enable Maximum MSS`| :white_check_mark: |
+|`Maximum MSS`|1420 |
+
+>[!TIP]
+>Maximum MSS size of 1420 is good for Wireguard
+
+
 #### Networking
 
 |Field|Value|
@@ -52,6 +62,14 @@ Default <br/>
 |`Thermal Sensor`| `* cpu ondie thermal sensor`|
 |`Use RAM Disks`| :white_check_mark: `Use memory file system for /tmp and /var`|
 |`RAM Disk Size`| set [1024] `/tmp`, and [4096] `/var`|
+
+#### Notifications
+
+|Field|Value|
+|---|---|
+|Console Bell| [&#x2612;] Enable the console bell|
+|Startup/Shutdown Sound| [&#x2611;] Disable the startup/shutdown beep|
+
 
 ## Interfaces
 ### VLANs
@@ -293,3 +311,38 @@ Click **Save** and **Apply Changes**.
 
 === DONE ===
 
+<style>
+body { counter-reset: h1counter h2counter h3counter h4counter h5counter h6counter; }
+
+h1 { counter-reset: h2counter; }
+h2 { counter-reset: h3counter; }
+h3 { counter-reset: h4counter; }
+h4 { counter-reset: h5counter; }
+h5 { counter-reset: h6counter; }
+h6 {}
+
+h2:before {
+    counter-increment: h2counter;
+    content: counter(h2counter) ".\0000a0\0000a0";
+}
+
+h3:before {
+    counter-increment: h3counter;
+    content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+}
+
+h4:before {
+    counter-increment: h4counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+}
+
+h5:before {
+    counter-increment: h5counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ".\0000a0\0000a0";
+}
+
+h6:before {
+    counter-increment: h6counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
+}
+</style>
