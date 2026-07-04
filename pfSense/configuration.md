@@ -252,6 +252,12 @@ This will create an interface named `OPTx`. Click on the newly created one to co
 |Description| *WG_proton* |
 |IPv4 configuration type| Static IPv4|
 |IPv6 Configuration Type| None|
+|MTU|1432|
+
+>[!TIP]: set either `MTU` or `MSS`. No need to set both.
+
+>[!NOTE]: On WANs with `1500` byte *MTUs*, the *MTU* for *WireGuard* interfaces should be `1420` for *VPNs* carrying *IPv6* packets, or `1440` for *IPv4* traffic. <br/>
+> On *PPPoE WAN* type, set IPv4 *MTU* to `1432`.
 
 ##### Static IPv4 configuration
 
