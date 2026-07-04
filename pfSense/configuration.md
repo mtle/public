@@ -41,7 +41,7 @@ Default <br/>
 |`Maximum MSS`|1420 |
 
 >[!TIP]
->Maximum MSS size of 1420 is good for Wireguard
+>Maximum MSS size of 1420 is good for Wireguard <br/>
 >[what is mss](https://www.cloudflare.com/learning/network-layer/what-is-mss/)
 
 #### Networking
@@ -76,7 +76,7 @@ Default <br/>
 ### VLANs
 **Interfaces** -> **Assignment** -> **VLANs**: Add
 
-{#vlans-table .styled}
+##### vlan table
 |Interface|VLAN tag| Priority|Description|
 |---|---|---|---|
 |ix0|5||vpn_ca|
@@ -103,7 +103,7 @@ This will create an interface named `OPTx`. Click on the newly created one to co
 |IPv4 configuration type| pppoe|
 |IPv6 Configuration Type| None|
 |MTU|1492|
-|Advanced and MLPPP|click <div style="background-color: #f8d7da; padding: 10px; border-radius: 5px;"><strong>Advanced and MLPPP</strong></div> and select from **PPPs**|
+|Advanced and MLPPP|click `**Advanced and MLPPP**` and select from **PPPs**|
 |Block private networks and loopback addresses|:white_check_mark:|
 |Block bogon networks|:white_check_mark:|
 
