@@ -5,7 +5,7 @@ $TTL 2d
 
 $ORIGIN linkon.dedyn.io.
 @ IN SOA ns1.linkon.dedyn.io. admin.linkon.dedyn.io. (
-		2026031300	; serial number
+		2026071700	; serial number
 		2h        	; refresh =  2 hours
 		15m       	; update retry = 15 minutes
 		4w        	; expiry = 3 weeks + 12 hours
@@ -21,16 +21,14 @@ ns1            IN      A       192.168.5.7
 
 ; A records:
 
-pve            IN      A       192.168.5.29
-lianguo        IN      A       192.168.5.231
-hicomdata      IN      A       192.168.5.231
-tpe1021ws      IN      A       192.168.5.231
-yulinca        IN      A       192.168.5.231
-gs724tv4       IN      A       192.168.5.231
-kabini         IN      A       192.168.5.7
-x96            IN      A       192.168.5.5
-fw2            IN      A       192.168.5.4
-fw             IN      A       192.168.5.2
+lianguo        IN      A       192.168.11.15
+hicomdata      IN      A       192.168.11.14
+tpe1021ws      IN      A       192.168.11.13
+yulinca        IN      A       192.168.11.12
+gs724tv4       IN      A       192.168.11.11
+kabini         IN      A       192.168.11.7
+x96            IN      A       192.168.11.5
+fw             IN      A       192.168.11.2
 
 ; aliases: CNAME records
 agh            IN      CNAME    kabini

@@ -24,7 +24,6 @@ $ORIGIN 11.168.192.in-addr.arpa.
 2      IN       PTR     fw.linkon.freeddns.org.
 4      IN       PTR     fw2.linkon.freeddns.org.
 
-29     IN       PTR     pve.linkon.freeddns.org.
 15     IN       PTR     lianguo.linkon.freeddns.org.
 14     IN       PTR     hicomdata.linkon.freeddns.org.
 13     IN       PTR     tpe1021ws.linkon.freeddns.org.
@@ -49,7 +48,6 @@ $ORIGIN 5.168.192.in-addr.arpa.
 2      IN       PTR     fw.linkon.dedyn.io.
 4      IN       PTR     fw2.linkon.dedyn.io.
 
-29     IN       PTR     pve.linkon.dedyn.io.
 14     IN       PTR     hicomdata.linkon.dedyn.io.
 13     IN       PTR     tpe1021ws.linkon.dedyn.io.
 6      IN       PTR     kabini.linkon.dedyn.io.
