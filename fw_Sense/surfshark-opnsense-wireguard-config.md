@@ -14,7 +14,7 @@
 <p>Configure the Instance configuration as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
-  <caption>wireguard instance</caption>
+  <caption>Table: wireguard instance</caption>
   <tr>
     <th style="background-color: lightblue;">Enabled</th>
     <td>&#x2705;</td>
@@ -74,7 +74,7 @@
 <p>Configure the Peer as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
-  <caption>wireguard peer</caption>
+  <caption>Table: wireguard peer</caption>
   <tr>
     <th style="background-color: lightblue;">Enabled</th>
     <td>&#x2705;</td>
@@ -137,7 +137,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Configure it as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
-<caption>Interface assignment</caption>
+<caption>Table: Interface assignment</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
 <td>&#x2705;</td>
@@ -178,7 +178,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Configure the gateway as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
-<caption>Gateway creation</caption>
+<caption>Table: Gateway creation</caption>
 <tr>
 <th style="background-color: lightblue;">Name</th>
 <td>WG_VN</td>
@@ -225,7 +225,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Configure the rule as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
-<caption>Source NAT rule</caption>
+<caption>Table: Source NAT rule</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
 <td>&#x2705;</td>
@@ -291,7 +291,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>If you only pass IPv4 traffic through the wireguard tunnel, create the following rule:</p>
 
 <table>
-<caption>Nornamilzation rule</caption>
+<caption>Table: Nornamilzation rule</caption>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
 <td>WireGuard (Group)</td>
@@ -335,7 +335,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Go to Firewall ‣ Rules ‣ Interface - e.g. <mark><b>vn</b></mark></p>
 
 <table>
-<caption>Local IF rule to route traffic</caption>
+<caption>Table: Local IF rule to route traffic</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
 <td> &#x2705; </td>
@@ -413,7 +413,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Configure the rule as follows (if an option is not mentioned below, leave it as the default). You need to click the Show/Hide button next to “Advanced Options” to reveal the last setting:</p>
 
 <table>
-<caption>Rule for router services</caption>
+<caption>Table: Rule for router services</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
 <td> &#x2705; </td>
