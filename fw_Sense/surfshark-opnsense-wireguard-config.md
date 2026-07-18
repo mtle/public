@@ -1,4 +1,4 @@
-# Opnsense Wireguard configuration
+# OPNSense Wireguard configuration
 
 <h1>Introduction</h1>
 
@@ -29,55 +29,55 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 <div>
 
-<h1>Step 1 - Configure the Wireguard Instance</h1>
-<p>Go to VPN ‣ WireGuard ‣ Instances</p>
+<h1>Step 1 - Wireguard Instance</h1>
+<p>Go to `VPN` ‣ `WireGuard` ‣ `Instances`</p>
 <p>Click + to add a new Instance configuration</p>
 <p>Configure the Instance configuration as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
   <tr>
-    <th>Enabled</th>
+    <th style="background-color: lightblue;">Enabled</th>
     <td>Checked</td>
   </tr>
   <tr>
-    <th>Name</th>
+    <th style="background-color: lightblue;">Name</th>
     <td>surfshark_us</td>
   </tr>
   <tr>
-    <th>Public Key</th>
+    <th style="background-color: lightblue;">Public Key</th>
     <td>From provider conf [Credentials].PublicKey</td>
   </tr>
   <tr>
-    <th>Private Key</th>
+    <th style="background-color: lightblue;">Private Key</th>
     <td>From provider conf [Credentials].PrivateKey</td>
   </tr>
   </tr>
   <tr>
-    <th>Listen Port</th>
+    <th style="background-color: lightblue;">Listen Port</th>
     <td>51821 or a higher numbered unique port</td>
   </tr>
   <tr>
-    <th>DNS Server</th>
+    <th style="background-color: lightblue;">DNS Server</th>
     <td>Leave this blank, otherwise WireGuard will overwrite OPNsense’s DNS configuration</td>
   </tr>
   <tr>
-    <th>MTU</th>
+    <th style="background-color: lightblue;">MTU</th>
     <td>1420 (default) or 1412 if you use PPPoE; it’s 80 bytes less than your WAN MTU</td>
   </tr>
   <tr>
-    <th>Tunnel Address</th>
+    <th style="background-color: lightblue;">Tunnel Address</th>
     <td>VPN tunnel IP provided by your VPN provider, e.g. <b>10.14.5.2/32</b></td>
   </tr>
   <tr>
-    <th>Peers</th>
+    <th style="background-color: lightblue;">Peers</th>
     <td>leave it blank initially until the Peer configuration is created in Step 2</td>
   </tr>
   <tr>
-    <th>Disable Routes</th>
+    <th style="background-color: lightblue;">Disable Routes</th>
     <td>Checked</td>
   </tr>
   <tr>
-    <th>Gateway</th>
+    <th style="background-color: lightblue;">Gateway</th>
     <td>Specify an IP that is 1 number below your VPN tunnel IP, e.g.<b>10.14.5.1</b></td>
 
 </table>
@@ -95,35 +95,35 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 <table>
   <tr>
-    <th>Enabled</th>
+    <th style="background-color: lightblue;">Enabled</th>
     <td>Checked</td>
   </tr>
   <tr>
-    <th>Name</th>
+    <th style="background-color: lightblue;">Name</th>
     <td>us-buffalo</td>
   </tr>
   <tr>
-    <th>Public Key</th>
+    <th style="background-color: lightblue;">Public Key</th>
     <td>From provider conf [Interface].PublicKey</td>
   </tr>
   <tr>
-    <th>Endpoint Address</th>
+    <th style="background-color: lightblue;">Endpoint Address</th>
     <td>From provider. e.g. us-buf.prod.surfshark.com</td>
   </tr>
   <tr>
-    <th>Endpoint Address</th>
+    <th style="background-color: lightblue;">Endpoint Address</th>
     <td>From provider. e.g. 51280</td>
   </tr>
   <tr>
-    <th>Allowed IPs</th>
+    <th style="background-color: lightblue;">Allowed IPs</th>
     <td>0.0.0.0./0 - allow all</td>
   </tr>
   <tr>
-    <th>Instances</th>
+    <th style="background-color: lightblue;">Instances</th>
     <td>From step 1; i.e. surfshark_us</td>
   </tr>
   <tr>
-    <th>Keep alive</th>
+    <th style="background-color: lightblue;">Keep alive</th>
     <td>25</td>
   </tr>
 </table>
@@ -157,23 +157,23 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <table>
 <tr>
-<th>Enable</th>
+<th style="background-color: lightblue;">Enable</th>
 <td>Checked</td>
 </tr>
 <tr>
-<th>Lock</th>
+<th style="background-color: lightblue;">Lock</th>
 <td>Checked</td>
 </tr>
 <tr>
-<th>Description</th>
+<th style="background-color: lightblue;">Description</th>
 <td>surfshark_us</td>
 </tr>
 <tr>
-<th>IPv4 Configuration Type</th>
+<th style="background-color: lightblue;">IPv4 Configuration Type</th>
 <td>None</td>
 </tr>
 <tr>
-<th>IPv6 Configuration Type</th>
+<th style="background-color: lightblue;">IPv6 Configuration Type</th>
 <td>None</td>
 </tr>
 
@@ -197,35 +197,35 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <table>
 <tr>
-<th>Name</th>
+<th style="background-color: lightblue;">Name</th>
 <td>WG_VN</td>
 </tr>
 <tr>
-<th>Description</th>
+<th style="background-color: lightblue;">Description</th>
 <td>Add one if you wish to</td>
 </tr>
 <tr>
-<th>Interface</th>
+<th style="background-color: lightblue;">Interface</th>
 <td>Select the interface in step 4</td>
 </tr>
 <tr>
-<th>Address Family</th>
+<th style="background-color: lightblue;">Address Family</th>
 <td>Select IPv4 in the dropdown</td>
 </tr>
 <tr>
-<th>IP address</th>
+<th style="background-color: lightblue;">IP address</th>
 <td>Gateway IP in step 2, e.g. <b>10.14.5.1</b></td>
 </tr>
 <tr>
-<th>Far Gateway</th>
+<th style="background-color: lightblue;">Far Gateway</th>
 <td>Checked</td>
 </tr>
 <tr>
-<th>Disable Gateway Monitoring</th>
+<th style="background-color: lightblue;">Disable Gateway Monitoring</th>
 <td>Unchecked</td>
 </tr>
 <tr>
-<th>Monitor IP</th>
+<th style="background-color: lightblue;">Monitor IP</th>
 <td>Insert the endpoint VPN tunnel IP (NOT the public IP) of your VPN provider</td>
 </tr>
 </table>
@@ -241,47 +241,47 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Configure the rule as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
-<th>Interface</th>
+<th style="background-color: lightblue;">Interface</th>
 <td>surfshark_us</td>
 </tr>
 <tr>
-<th>TCP/IP Version</th>
+<th style="background-color: lightblue;">TCP/IP Version</th>
 <td>IPv4 or IPv6 (as applicable)</td>
 </tr>
 <tr>
-<th> Protocol </th>
+<th style="background-color: lightblue;"> Protocol </th>
 <td> any </td>
 </tr>
 <tr>
-<th> Source invert </th>
+<th style="background-color: lightblue;"> Source invert </th>
 <td> Unchecked </td>
 </tr>
 <tr>
-<th> Source address </th>
+<th style="background-color: lightblue;"> Source address </th>
 <td> Select a local interface, e.g. <b>VPN net</b></td>
 </tr>
 <tr>
-<th> Source port </th>
+<th style="background-color: lightblue;"> Source port </th>
 <td> any </td>
 </tr>
 <tr>
-<th> Destination invert </th>
+<th style="background-color: lightblue;"> Destination invert </th>
 <td> Unchecked </td>
 </tr>
 <tr>
-<th> Destination address </th>
+<th style="background-color: lightblue;"> Destination address </th>
 <td> any </td>
 </tr>
 <tr>
-<th> Destination port </th>
+<th style="background-color: lightblue;"> Destination port </th>
 <td> any </td>
 </tr>
 <tr>
-<th> Translation / target </th>
+<th style="background-color: lightblue;"> Translation / target </th>
 <td> Interface address </td>
 </tr>
 <tr>
-<th> Description </th>
+<th style="background-color: lightblue;"> Description </th>
 <td> NAT:WG </td>
 </tr>
 
@@ -296,34 +296,34 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>If you only pass IPv4 traffic through the wireguard tunnel, create the following rule:</p>
 
 <table>
-<th>Interface</th>
+<th style="background-color: lightblue;">Interface</th>
 <td>WireGuard (Group)</td>
 <tr>
-<th>Direction</th>
+<th style="background-color: lightblue;">Direction</th>
 <td>Any</td>
 </tr>
 <tr>
-<th>Protocol</th>
+<th style="background-color: lightblue;">Protocol</th>
 <td>any</td>
 </tr>
 <tr>
-<th>Source</th>
+<th style="background-color: lightblue;">Source</th>
 <td>any</td>
 </tr>
 <tr>
-<th>Destination</th>
+<th style="background-color: lightblue;">Destination</th>
 <td>any</td>
 </tr>
 <tr>
-<th>Destination port</th>
+<th style="background-color: lightblue;">Destination port</th>
 <td>any</td>
 </tr>
 <tr>
-<th>Description</th>
+<th style="background-color: lightblue;">Description</th>
 <td>Wireguard MSS Clamping IPv4</td>
 </tr>
 <tr>
-<th>Max mss</th>
+<th style="background-color: lightblue;">Max mss</th>
 <td>1380 (default) or 1372 if you use PPPoE; it’s 40 bytes less than your Wireguard MTU</td>
 </tr>
 
@@ -337,103 +337,55 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Go to Firewall ‣ rules ‣ Wireguard Group</p>
 
 <table>
-<th>Action</th>
+<th style="background-color: lightblue;">Action</th>
 <td>Pass</td>
 <tr>
-<th>
-Quick
-</th>
-<td>
-Checked
-</td>
+<th style="background-color: lightblue;"> Quick </th>
+<td> Checked </td>
 </tr>
 <tr>
-<th>
-Interface
-</th>
-<td>
-Wireguard Group
-</td>
+<th style="background-color: lightblue;"> Interface </th>
+<td> Wireguard Group </td>
 </tr>
 <tr>
-<th>
-Direction
-</th>
-<td>
-in
-</td>
+<th style="background-color: lightblue;"> Direction </th>
+<td> in </td>
 </tr>
 <tr>
-<th>
-TCP/IP Version
-</th>
-<td>
-IPv4
-</td>
+<th style="background-color: lightblue;"> TCP/IP Version </th>
+<td> IPv4 </td>
 </tr>
 <tr>
-<th>
-Protocol
-</th>
-<td>
-any
-</td>
+<th style="background-color: lightblue;"> Protocol </th>
+<td> any </td>
 </tr>
 <tr>
-<th>
-Source / Invert
-</th>
-<td>
-Unchecked
-</td>
+<th style="background-color: lightblue;"> Source / Invert </th>
+<td> Unchecked </td>
 </tr>
 <tr>
-<th>
-Source
-</th>
-<td>
-Select the relevant hosts Alias, e.g. WG_tunnels: 10.0.0.0/8, 10.14.0.0/16
-</td>
+<th style="background-color: lightblue;"> Source </th>
+<td> Select the relevant hosts Alias, e.g. WG_tunnels: 10.0.0.0/8, 10.14.0.0/16 </td>
 </tr>
 <tr>
-<th>
-Destination / Invert
-</th>
-<td>
-Checked
-</td>
+<th style="background-color: lightblue;"> Destination / Invert </th>
+<td> Checked </td>
 </tr>
 <tr>
-<th>
-Destination
-</th>
-<td>
-any
-</td>
+<th style="background-color: lightblue;"> Destination </th>
+<td> any </td>
 </tr>
 <tr>
-<th>
-Destination port range
-</th>
-<td>
-any
-</td>
+<th style="background-color: lightblue;"> Destination port range </th>
+<td> any </td>
 </tr>
 <tr>
-<th>
-Description
-</th>
-<td>
-Allow WireGuard group Internet access
-</td>
+<th style="background-color: lightblue;"> Description </th>
+<td> Allow WireGuard group Internet access </td>
 </tr>
 <tr>
-<th>
-Gateway
-</th>
-<td>
-Default
-</td>
+<th style="background-color: lightblue;"> Gateway </th>
+<td> Default </td>
 </tr>
 
 </table>
