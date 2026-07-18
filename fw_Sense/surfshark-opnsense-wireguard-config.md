@@ -30,7 +30,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 <div>
 
 <h1>Step 1 - Wireguard Instance</h1>
-<p>Go to `VPN` ‣ `WireGuard` ‣ `Instances`</p>
+<p>Go to VPN ‣ WireGuard ‣ Instances</p>
 <p>Click + to add a new Instance configuration</p>
 <p>Configure the Instance configuration as follows (if an option is not mentioned below, leave it as the default):</p>
 
@@ -88,7 +88,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 
 <div>
-<h1>Step 2 - Configure the peer</h1>
+<h1>Step 2 - Wireguard Peer</h1>
 <p>Go to VPN ‣ WireGuard ‣ Peers</p>
 <p>Click + to add a new Peer</p>
 <p>Configure the Peer as follows (if an option is not mentioned below, leave it as the default):</p>
@@ -138,7 +138,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 
 <div>
-<h1>Step 3 - Turn on/restart WireGuard</h1>
+<h1>Step 3 - Enable WireGuard</h1>
 Turn on WireGuard under VPN ‣ WireGuard ‣ General if it is not already on (click Apply after checking the checkbox)
 <br>
 Otherwise, restart WireGuard - you can do this by turning it off and on under VPN ‣ WireGuard ‣ General (click Apply after both unchecking and checking the checkbox)
@@ -146,7 +146,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </div>
 
 <div>
-<h1>Step 4 - Assign an interface to WireGuard</h1>
+<h1>Step 4 - Assign an interface to WireGuard, <mark>wgX</mark></h1>
 
 <p>Go to Interfaces ‣ Assignments</p>
 <p>In the dropdown next to “New interface:”, select the WireGuard device (wg1 if this is your first one)</p>
@@ -233,39 +233,49 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 
 <div>
-<h1>Step 7 - Create an outbound NAT rule</h1>
+<h1>Step 7 - Source NAT rule</h1>
 
-<p>Go to Firewall ‣ NAT ‣ Outbound</p>
-<p>Select “Hybrid outbound NAT rule generation” if it is not already selected, and click Save and then Apply changes</p>
+<p>Go to Firewall ‣ NAT ‣ Source NAT</p>
+<p>Mode: Select “Hybrid outbound NAT rule generation” if it is not already selected. Click Apply</p>
 <p>Click Add to add a new rule</p>
 <p>Configure the rule as follows (if an option is not mentioned below, leave it as the default):</p>
 
 <table>
+<tr>
+<th style="background-color: lightblue;">Enable</th>
+<td>&#x2705;</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Categories</th>
+<td>vpn</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Description</th>
+<td>wg source NAT</td>
+</tr>
+<tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>surfshark_us</td>
+<td>select the <mark>WAN</mark> interface</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">TCP/IP Version</th>
-<td>IPv4 or IPv6 (as applicable)</td>
+<td><mark>IPv4</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Protocol </th>
 <td> any </td>
 </tr>
 <tr>
-<th style="background-color: lightblue;"> Source invert </th>
+<th style="background-color: lightblue;">Invert Source</th>
 <td> Unchecked </td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Source address </th>
-<td> Select a local interface, e.g. <b>VPN net</b></td>
+<td> Select a <mark>WG</mark> interface, e.g. <b>wg_vn network</b></td>
 </tr>
 <tr>
-<th style="background-color: lightblue;"> Source port </th>
-<td> any </td>
-</tr>
 <tr>
-<th style="background-color: lightblue;"> Destination invert </th>
+<th style="background-color: lightblue;">Invert Destination</th>
 <td> Unchecked </td>
 </tr>
 <tr>
@@ -277,12 +287,12 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <td> any </td>
 </tr>
 <tr>
-<th style="background-color: lightblue;"> Translation / target </th>
-<td> Interface address </td>
+<th style="background-color: lightblue;"> Translation Source IP</th>
+<td>select <mark>WAN address</mark></td>
 </tr>
 <tr>
-<th style="background-color: lightblue;"> Description </th>
-<td> NAT:WG </td>
+<th style="background-color: lightblue;"> Translation Source Port</th>
+<td>any</td>
 </tr>
 
 </table>
