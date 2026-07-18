@@ -29,7 +29,8 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 <div>
 
-<h1>Step 1 - Wireguard Instance</h1>
+<h1>Wireguard setup</h1>
+<h2>Step 1 - Wireguard Instance</h2>
 <p>Go to VPN ‣ WireGuard ‣ Instances</p>
 <p>Click + to add a new Instance configuration</p>
 <p>Configure the Instance configuration as follows (if an option is not mentioned below, leave it as the default):</p>
@@ -37,7 +38,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 <table>
   <tr>
     <th style="background-color: lightblue;">Enabled</th>
-    <td>Checked</td>
+    <td>&#x2705;</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Name</th>
@@ -74,7 +75,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
   </tr>
   <tr>
     <th style="background-color: lightblue;">Disable Routes</th>
-    <td>Checked</td>
+    <td>&#x2705;</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Gateway</th>
@@ -88,7 +89,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 
 <div>
-<h1>Step 2 - Wireguard Peer</h1>
+<h2>Step 2 - Wireguard Peer</h2>
 <p>Go to VPN ‣ WireGuard ‣ Peers</p>
 <p>Click + to add a new Peer</p>
 <p>Configure the Peer as follows (if an option is not mentioned below, leave it as the default):</p>
@@ -96,7 +97,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 <table>
   <tr>
     <th style="background-color: lightblue;">Enabled</th>
-    <td>Checked</td>
+    <td>&#x2705;</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Name</th>
@@ -138,7 +139,7 @@ This how-to describes setting up a central WireGuard Instance (server) on OPNsen
 
 
 <div>
-<h1>Step 3 - Enable WireGuard</h1>
+<h2>Step 3 - Enable WireGuard</h2>
 Turn on WireGuard under VPN ‣ WireGuard ‣ General if it is not already on (click Apply after checking the checkbox)
 <br>
 Otherwise, restart WireGuard - you can do this by turning it off and on under VPN ‣ WireGuard ‣ General (click Apply after both unchecking and checking the checkbox)
@@ -146,7 +147,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </div>
 
 <div>
-<h1>Step 4 - Assign an interface to WireGuard, <mark>wgX</mark></h1>
+<h2>Step 4 - Assign an interface to WireGuard, <mark>wgX</mark></h2>
 
 <p>Go to Interfaces ‣ Assignments</p>
 <p>In the dropdown next to “New interface:”, select the WireGuard device (wg1 if this is your first one)</p>
@@ -158,11 +159,11 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <table>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
-<td>Checked</td>
+<td>&#x2705;</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Lock</th>
-<td>Checked</td>
+<td>&#x2705;</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Description</th>
@@ -184,12 +185,12 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </div>
 
 <div>
-<h1>Step 5 - Restart WireGuard</h1>
+<h2>Step 5 - Restart WireGuard</h2>
 <p>Now restart WireGuard - you can do this from the Dashboard (if you have the services widget) or by turning it off and on under VPN ‣ WireGuard ‣ General</p>
 </div>
 
 <div>
-<h1>Step 6 - Create a gateway</h1>
+<h2>Step 6 - Create a gateway</h2>
 
 <p>Go to System ‣ Gateways ‣ Configuration</p>
 <p>Click Add</p>
@@ -218,7 +219,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Far Gateway</th>
-<td>Checked</td>
+<td>&#x2705;</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Disable Gateway Monitoring</th>
@@ -231,9 +232,10 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </table>
 </div>
 
+<h1>Firewall</h1>
 
 <div>
-<h1>Step 7 - Source NAT rule</h1>
+<h2>Step 7 - Source NAT rule</h2>
 
 <p>Go to Firewall ‣ NAT ‣ Source NAT</p>
 <p>Mode: Select “Hybrid outbound NAT rule generation” if it is not already selected. Click Apply</p>
@@ -255,7 +257,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>select the <mark>WAN</mark> interface</td>
+<td>select the <mark>WAN interface</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">TCP/IP Version</th>
@@ -300,14 +302,16 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <div>
 
-<h1>Step 8 - Create normalization rules</h1>
+<h2>Step 8 - Create normalization rules - Optional</h2>
 
 <p>Go to Firewall ‣ Settings -> Normalization and press + to create one new normalization rule.</p>
 <p>If you only pass IPv4 traffic through the wireguard tunnel, create the following rule:</p>
 
 <table>
+<tr>
 <th style="background-color: lightblue;">Interface</th>
 <td>WireGuard (Group)</td>
+</tr>
 <tr>
 <th style="background-color: lightblue;">Direction</th>
 <td>Any</td>
@@ -338,24 +342,42 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 
 
-<table>
+</table>
 </div>
 
 <div>
-<h1> Step 9 - Firewall rule - Wireguard group</h1>
+<h2> Step 9 - Interface rule</h2>
 
-<p>Go to Firewall ‣ rules ‣ Wireguard Group</p>
+<p>Go to Firewall ‣ Rules ‣ Interface - e.g. <mark><b>vn</b></mark></p>
 
 <table>
-<th style="background-color: lightblue;">Action</th>
-<td>Pass</td>
 <tr>
-<th style="background-color: lightblue;"> Quick </th>
-<td> Checked </td>
+<th style="background-color: lightblue;">Enable</th>
+<td> &#x2705; </td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Categories</th>
+<td>all</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Description</th>
+<td>Allow access to internet and block access to private networks</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Invert Interface </th>
+<td>unchecked</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Interface </th>
-<td> Wireguard Group </td>
+<td>select a local interface, e.g. <mark>vn</mark></td>
+</tr>
+<tr>
+<th style="background-color: lightblue;"> Quick </th>
+<td> &#x2705; </td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Action</th>
+<td>Pass</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Direction </th>
@@ -375,27 +397,23 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Source </th>
-<td> Select the relevant hosts Alias, e.g. WG_tunnels: 10.0.0.0/8, 10.14.0.0/16 </td>
+<td>Select a local network or a host Alias, e.g. <mark>vn network</mark>/<mark>192.168.5.0/24, 192.168.7.0/24</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination / Invert </th>
-<td> Checked </td>
+<td> &#x2705; </td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination </th>
-<td> any </td>
+<td>select alias <mark>RFC1918_netwirk</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination port range </th>
 <td> any </td>
 </tr>
 <tr>
-<th style="background-color: lightblue;"> Description </th>
-<td> Allow WireGuard group Internet access </td>
-</tr>
-<tr>
 <th style="background-color: lightblue;"> Gateway </th>
-<td> Default </td>
+<td>select wg_gw_X</td>
 </tr>
 
 </table>
