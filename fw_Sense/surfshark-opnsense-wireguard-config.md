@@ -103,7 +103,7 @@
   </tr>
   <tr>
     <th style="background-color: lightblue;">Instances</th>
-    <td><a href="tbl_1">table #1 name</a></td>
+    <td><a href="#tbl_1">table #1 name</a></td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Keep alive</th>
@@ -112,7 +112,7 @@
 </table>
 <p>Save the Peer configuration, and then click Apply</p>
 <p>Now go back to VPN ‣ WireGuard ‣ Instances</p>
-<p>Open the Instance configuration that was created in Step 1</p>
+<p>Open the Instance configuration that was created in <a href="#wg_1">Instance</a></p>
 <p>In the Peers dropdown, select the newly created Peer</p>
 <p>Save the Instance configuration again, and then click Apply</p>
 <p>Repeat for as many clients as you wish to configure</p>
@@ -187,7 +187,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>Select the interface in step 3</td>
+<td>Select the interface in <a href="#sys_1">Assign WG interface </a>, <a href="#tbl_3">wgX</a></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Address Family</th>
