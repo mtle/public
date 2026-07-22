@@ -187,7 +187,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>Select the interface in <a href="#sys_if">Assign WG interface </a>, <a href="#tbl_if_assignment">wgX</a></td>
+<td>Select the interface in <a href="#sys_if">Assign WG interface </a>, <a href="#tbl_if_assignment">surfshark_us_if</a></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Address Family</th>
@@ -292,7 +292,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>select <a href="#tbl_if_assignment"><em>surfshark_us_if</em> interface</a></td>
+<td>select <a href="#tbl_if_assignment"><em>surfshark_us_if</em></a> interface</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">TCP/IP Version</th>
@@ -405,7 +405,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Gateway </th>
-<td>select <a href="#tbl_gw">gw name, <em>ss_us_gw</em></a></td>
+<td>select <a href="#tbl_gw">gw name</a>, <em>ss_us_gw</em></td>
 </tr>
 
 </table>
