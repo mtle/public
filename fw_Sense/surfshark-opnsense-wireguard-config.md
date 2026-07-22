@@ -10,12 +10,12 @@
 <div>
 
 <h1 id="wg">Wireguard setup</h1>
-<h2 id="wg_1">1 - Instance</h2>
+<h2 id="wg_inst">1 - Instance</h2>
 <p>Go to VPN ‣ WireGuard ‣ Instances</p>
 <p>Click + to add a new Instance configuration</p>
 <p>Configure the Instance configuration as follows (if an option is not mentioned below, leave it as the default):</p>
 
-<table id="tbl_1">
+<table id="tbl_inst">
   <caption>Table: wireguard instance</caption>
   <tr>
     <th style="background-color: lightblue;">Enabled</th>
@@ -70,12 +70,12 @@
 
 
 <div>
-<h2 id="wg_2">2 - Peer</h2>
+<h2 id="wg_peer">2 - Peer</h2>
 <p>Go to VPN ‣ WireGuard ‣ Peers</p>
 <p>Click + to add a new Peer</p>
 <p>Configure the Peer as follows (if an option is not mentioned below, leave it as the default):</p>
 
-<table id="tbl_2">
+<table id="tbl_peer">
   <caption>Table: wireguard peer</caption>
   <tr>
     <th style="background-color: lightblue;">Enabled</th>
@@ -103,7 +103,7 @@
   </tr>
   <tr>
     <th style="background-color: lightblue;">Instances</th>
-    <td><a href="#tbl_1">table #1 name</a></td>
+    <td><a href="#tbl_inst">Instance name</a></td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Keep alive</th>
@@ -112,7 +112,7 @@
 </table>
 <p>Save the Peer configuration, and then click Apply</p>
 <p>Now go back to VPN ‣ WireGuard ‣ Instances</p>
-<p>Open the Instance configuration that was created in <a href="#wg_1">Instance</a></p>
+<p>Open the Instance configuration that was created in <a href="#wg_inst">Instance</a></p>
 <p>In the Peers dropdown, select the newly created Peer</p>
 <p>Save the Instance configuration again, and then click Apply</p>
 <p>Repeat for as many clients as you wish to configure</p>
@@ -130,7 +130,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <h1 id="sys">System settings</h1>
 <div>
-<h2 id="sys_1">1 - Assign an interface to WireGuard, <mark>wgX</mark></h2>
+<h2 id="sys_if">1 - Assign an interface to WireGuard, <mark>wgX</mark></h2>
 
 <p>Go to Interfaces ‣ Assignments</p>
 <p>In the dropdown next to “New interface:”, select the WireGuard device (wg1 if this is your first one)</p>
@@ -139,7 +139,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <p>Then select your new interface under the Interfaces menu</p>
 <p>Configure it as follows (if an option is not mentioned below, leave it as the default):</p>
 
-<table id="tbl_3">
+<table id="tbl_if_assignment">
 <caption>Table: Interface assignment</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
@@ -169,13 +169,13 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </div>
 
 <div>
-<h2 id="sys_2">2 - Create a gateway</h2>
+<h2 id="sys_gw">2 - Create a gateway</h2>
 
 <p>Go to System ‣ Gateways ‣ Configuration</p>
 <p>Click Add</p>
 <p>Configure the gateway as follows (if an option is not mentioned below, leave it as the default):</p>
 
-<table id="tbl_4">
+<table id="tbl_gw">
 <caption>Table: Gateway creation</caption>
 <tr>
 <th style="background-color: lightblue;">Name</th>
@@ -187,7 +187,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>Select the interface in <a href="#sys_1">Assign WG interface </a>, <a href="#tbl_3">wgX</a></td>
+<td>Select the interface in <a href="#sys_if">Assign WG interface </a>, <a href="#tbl_if_assignment">wgX</a></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Address Family</th>
@@ -215,9 +215,9 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <h1 id="fw">Firewall</h1>
 
 <div>
-<h2 id="fw_1">1 - Aliases</h2>
+<h2 id="fw_aliases">1 - Aliases</h2>
 <p>Go to Firewall ‣ Aliases ‣ and <makr>ADD 2 new aliases</makr></p>
-<table id="tbl_5">
+<table id="tbl_alias_rfc1918">
 <caption>Table: Alias</caption>
 <tr>
     <th style="background-color: lightblue;">Enable</th>
@@ -241,7 +241,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 </table>
 
-<table id="tbl_6">
+<table id="tbl_alias_vpn">
 <caption>Table: Alias</caption>
 <tr>
     <th style="background-color: lightblue;">Enable</th>
@@ -269,14 +269,14 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 
 <div>
-<h2 id="fw_2">2 - Source NAT rule</h2>
+<h2 id="fw_srcnat">2 - Source NAT rule</h2>
 
 <p>Go to Firewall ‣ NAT ‣ Source NAT</p>
 <p>Mode: Select “Hybrid outbound NAT rule generation” if it is not already selected. Click Apply</p>
 <p>Click Add to add a new rule</p>
 <p>Configure the rule as follows (if an option is not mentioned below, leave it as the default):</p>
 
-<table id="tbl_7">
+<table id="tbl_srcnat">
 <caption>Table: Source NAT rule</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
@@ -292,7 +292,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>select the <mark>surfshark_us_if</mark></td>
+<td>select <a href="#tbl_if_assignment">Interface</a></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">TCP/IP Version</th>
@@ -308,7 +308,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Source address </th>
-<td> Select the <mark>vpn_networks</mark> alias</td>
+<td> Select <a href="#tbl_alias_vpn">vpn networks</a></td>
 </tr>
 <tr>
 <tr>
@@ -337,11 +337,11 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 
 <div>
-<h2 id="fw_3">3 - Local Interface rule</h2>
+<h2 id="fw_if_rule">3 - Local Interface rule</h2>
 
-<p>Go to Firewall ‣ Rules ‣ Interface - e.g. <mark><b>vn</b></mark></p>
+<p>Go to Firewall ‣ Rules ‣ Interface - e.g. local_if <mark><b>vn</b></mark></p>
 
-<table id="tbl_8">
+<table id="tbl_if_rule">
 <caption>Table: Local IF rule to route traffic</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
@@ -397,7 +397,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination </th>
-<td>select alias <mark>RFC1918_networks</mark></td>
+<td>select <a href="#tbl_alias_rfc1918">RFC1918_networks</a></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination port range </th>
@@ -405,15 +405,15 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Gateway </th>
-<td>select <mark>ss_us_gw</mark></td>
+<td>select <a href="#tbl_gw">gw name</a></td>
 </tr>
 
 </table>
 </div>
 
 <div>
-<h2 id="fw_4">4 - VPN kill switch</h2>
-<p>Edit the <em>3 - local fw rule</em>above</p>
+<h2 id="fw_kill_switch">4 - VPN kill switch</h2>
+<p>Edit <a href="#fw_if_rule">the local fw rule</a> above</p>
 <p>Click on the Show/Hide button next to <mark>Advanced Options</mark>. Then, in the <mark>Set local tag</mark> field, add <mark>NO_WAN_EGRESS</mark>
 </p>
 
@@ -425,7 +425,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <p>Configure the rule as follows:</p>
 
-<table id="tbl_9">
+<table id="tbl_vpn_killswitch">
 <caption>Table: vpn kill switch</caption>
 <tr>
     <th style="background-color: lightblue;">Enable</th>
@@ -490,7 +490,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <h1 id="opt">Optional settings</h1>
 <div>
-<h2 id="opt_1">1 - Routing for traffic generated by the router - Optional</h2>
+<h2 id="opt_routing">1 - Routing for traffic generated by the router - Optional</h2>
 <p>Services running on the router and configured to use the VPN interface must have their traffic routed to the VPN gateway in order to use the VPN. Note that locally generated traffic is not affected by NAT or by the firewall rule created in Step 6.</p>
 
 <p>Go to Firewall ‣ Rules ‣ Floating</p>
@@ -499,7 +499,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 <p>Configure the rule as follows (if an option is not mentioned below, leave it as the default). You need to click the Show/Hide button next to “Advanced Options” to reveal the last setting:</p>
 
-<table id="tbl_10">
+<table id="tbl_routing">
 <caption>Table: Rule for router services</caption>
 <tr>
 <th style="background-color: lightblue;">Enable</th>
@@ -573,12 +573,12 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 
 <div>
-<h2 id="opt_2">2 - Create normalization rule - Optional</h2>
+<h2 id="opt_norm">2 - Create normalization rule - Optional</h2>
 
 <p>Go to Firewall ‣ Settings -> Normalization and press + to create one new normalization rule.</p>
 <p>If you only pass IPv4 traffic through the wireguard tunnel, create the following rule:</p>
 
-<table id="tbl_11">
+<table id="tbl_norm">
 <caption>Table: Nornamilzation rule</caption>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
