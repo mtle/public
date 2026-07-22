@@ -414,7 +414,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <div>
 <h2>4 - VPN kill switch</h2>
 <p>Edit the <em>3 - local fw rule</em>above</p>
-<p>Click on the Show/Hide button next to <em>Advanced Options</em>. Then, in the <em>Set local tag</em> field, add <mark>NO_WAN_EGRESS</mark>
+<p>Click on the Show/Hide button next to <mark>Advanced Options</mark>. Then, in the <mark>Set local tag</mark> field, add <mark>NO_WAN_EGRESS</mark>
 </p>
 
 <p>Save the rule, and then click Apply changes</p>
