@@ -292,7 +292,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>select <a href="#tbl_if_assignment">Interface</a></td>
+<td>select <a href="#tbl_if_assignment"><em>surfshark_us_if</em> interface</a></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">TCP/IP Version</th>
@@ -405,7 +405,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Gateway </th>
-<td>select <a href="#tbl_gw">gw name</a></td>
+<td>select <a href="#tbl_gw">gw name, <em>ss_us_gw</em></a></td>
 </tr>
 
 </table>
