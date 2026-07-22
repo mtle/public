@@ -10,7 +10,7 @@
 <div>
 
 <h1>Wireguard setup</h1>
-<h2>Step 1 - Wireguard Instance</h2>
+<h2>1 - Wireguard Instance</h2>
 <p>Go to VPN ‣ WireGuard ‣ Instances</p>
 <p>Click + to add a new Instance configuration</p>
 <p>Configure the Instance configuration as follows (if an option is not mentioned below, leave it as the default):</p>
@@ -70,7 +70,7 @@
 
 
 <div>
-<h2>Step 2 - Wireguard Peer</h2>
+<h2>2 - Wireguard Peer</h2>
 <p>Go to VPN ‣ WireGuard ‣ Peers</p>
 <p>Click + to add a new Peer</p>
 <p>Configure the Peer as follows (if an option is not mentioned below, leave it as the default):</p>
@@ -129,7 +129,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </div>
 
 <div>
-<h2>Step 3 - Assign an interface to WireGuard, <mark>wgX</mark></h2>
+<h2>3 - Assign an interface to WireGuard, <mark>wgX</mark></h2>
 
 <p>Go to Interfaces ‣ Assignments</p>
 <p>In the dropdown next to “New interface:”, select the WireGuard device (wg1 if this is your first one)</p>
@@ -168,12 +168,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </div>
 
 <div>
-<h2>Step 4 - Restart WireGuard</h2>
-<p>Now restart WireGuard - you can do this from the Dashboard (if you have the services widget) or by turning it off and on under VPN ‣ WireGuard ‣ General</p>
-</div>
-
-<div>
-<h2>Step 5 - Create a gateway</h2>
+<h2>4 - Create a gateway</h2>
 
 <p>Go to System ‣ Gateways ‣ Configuration</p>
 <p>Click Add</p>
@@ -219,7 +214,61 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 <h1>Firewall</h1>
 
 <div>
-<h2>Step 6 - Source NAT rule</h2>
+<h2>1 - Aliases</h2>
+<p>Go to Firewall ‣ Aliases ‣ and <makr>ADD 2 new aliases</makr></p>
+<table>
+<caption>Table: Alias</caption>
+<tr>
+    <th style="background-color: lightblue;">Enable</th>
+    <td>&#x2705;</td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">Name</th>
+    <td>RFC1918_networks</td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">Type</th>
+    <td>networks</td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">contents</th>
+    <td><mark>10.0.0.0/8</mark> <mark>172.12.0.0/12</mark> <mark>192.168.0.0/16</mark></td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">Description</th>
+    <td>anything</td>
+</tr>
+</table>
+
+<table>
+<caption>Table: Alias</caption>
+<tr>
+    <th style="background-color: lightblue;">Enable</th>
+    <td>&#x2705;</td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">Name</th>
+    <td>vpn_networks</td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">Type</th>
+    <td>networks</td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">contents</th>
+    <td><mark>192.168.0.0/20</mark></td>
+</tr>
+<tr>
+    <th style="background-color: lightblue;">Description</th>
+    <td></td>
+</tr>
+</table>
+
+</div>
+
+
+<div>
+<h2>2 - Source NAT rule</h2>
 
 <p>Go to Firewall ‣ NAT ‣ Source NAT</p>
 <p>Mode: Select “Hybrid outbound NAT rule generation” if it is not already selected. Click Apply</p>
@@ -242,7 +291,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Interface</th>
-<td>select the <mark>WAN interface</mark></td>
+<td>select the <mark>surfshark_us_if</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">TCP/IP Version</th>
@@ -258,7 +307,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Source address </th>
-<td> Select a <mark>WG</mark> interface, e.g. <b>wg_vn network</b></td>
+<td> Select the <mark>vpn_networks</mark> alias</td>
 </tr>
 <tr>
 <tr>
@@ -275,7 +324,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Translation Source IP</th>
-<td>select <mark>WAN address</mark></td>
+<td><mark>interface address</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Translation Source Port</th>
@@ -285,54 +334,9 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </table>
 </div>
 
-<div>
-
-<h2>Step 7 - Create normalization rule - Optional</h2>
-
-<p>Go to Firewall ‣ Settings -> Normalization and press + to create one new normalization rule.</p>
-<p>If you only pass IPv4 traffic through the wireguard tunnel, create the following rule:</p>
-
-<table>
-<caption>Table: Nornamilzation rule</caption>
-<tr>
-<th style="background-color: lightblue;">Interface</th>
-<td>WireGuard (Group)</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Direction</th>
-<td>Any</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Protocol</th>
-<td>any</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Source</th>
-<td>any</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Destination</th>
-<td>any</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Destination port</th>
-<td>any</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Description</th>
-<td>Wireguard MSS Clamping IPv4</td>
-</tr>
-<tr>
-<th style="background-color: lightblue;">Max mss</th>
-<td>1380 (default) or 1372 if you use PPPoE; it’s 40 bytes less than your Wireguard MTU</td>
-</tr>
-
-
-</table>
-</div>
 
 <div>
-<h2> Step 8 - Local Interface rule</h2>
+<h2>3 - Local Interface rule</h2>
 
 <p>Go to Firewall ‣ Rules ‣ Interface - e.g. <mark><b>vn</b></mark></p>
 
@@ -344,7 +348,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;">Categories</th>
-<td>all</td>
+<td>vpn</td>
 </tr>
 <tr>
 <th style="background-color: lightblue;">Description</th>
@@ -392,7 +396,7 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination </th>
-<td>select alias <mark>RFC1918_network</mark></td>
+<td>select alias <mark>RFC1918_networks</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Destination port range </th>
@@ -404,9 +408,12 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 </tr>
 
 </table>
+</div>
 
-<h2> Step 9. Routing for traffic generated by the router - Optional</h2>
-<p>Services running on the router and configured to use the VPN interface must have their traffic routed to the VPN gateway in order to use the VPN. Note that locally generated traffic is not affected by NAT or by the firewall rule created in Step 7.</p>
+
+<div>
+<h2>5 - Routing for traffic generated by the router - Optional</h2>
+<p>Services running on the router and configured to use the VPN interface must have their traffic routed to the VPN gateway in order to use the VPN. Note that locally generated traffic is not affected by NAT or by the firewall rule created in Step 6.</p>
 
 <p>Go to Firewall ‣ Rules ‣ Floating</p>
 
@@ -486,6 +493,50 @@ Otherwise, restart WireGuard - you can do this by turning it off and on under VP
 
 </div>
 
+
+<div>
+<h2>6 - Create normalization rule - Optional</h2>
+
+<p>Go to Firewall ‣ Settings -> Normalization and press + to create one new normalization rule.</p>
+<p>If you only pass IPv4 traffic through the wireguard tunnel, create the following rule:</p>
+
+<table>
+<caption>Table: Nornamilzation rule</caption>
+<tr>
+<th style="background-color: lightblue;">Interface</th>
+<td>WireGuard (Group)</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Direction</th>
+<td>Any</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Protocol</th>
+<td>any</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Source</th>
+<td>any</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Destination</th>
+<td>any</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Destination port</th>
+<td>any</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Description</th>
+<td>Wireguard MSS Clamping IPv4</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;">Max mss</th>
+<td>1380 (default) or 1372 if you use PPPoE; it’s 40 bytes less than your Wireguard MTU</td>
+</tr>
+
+</table>
+</div>
 
 </body>
 <html>
