@@ -27,7 +27,7 @@
   </tr>
   <tr>
     <th style="background-color: lightblue;">Name</th>
-    <td>surfshark_us</td>
+    <td>wg_us</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Public Key</th>
@@ -142,7 +142,7 @@
 
 <p>Go to Interfaces ‣ Assignments</p>
 <p>In the dropdown next to “New interface:”, select the WireGuard device (wg1 if this is your first one)</p>
-<p>Add a description (eg <em>surfshark_us_if</em>)</p>
+<p>Add a description (eg <em>wg_us_if</em>)</p>
 <p>Click + to add it, then click Save</p>
 <p>Then select your new interface under the Interfaces menu</p>
 <p>Configure it as follows (if an option is not mentioned below, leave it as the default):</p>
@@ -160,7 +160,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;">Description</th>
-  <td>surfshark_us_if</td>
+  <td>wg_us_if</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;">IPv4 Configuration Type</th>
@@ -190,11 +190,11 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;">Description</th>
-  <td>surfshark us gw</td>
+  <td>wg_us gw</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;">Interface</th>
-  <td>Select the interface in <a href="#sys_if">Assign WG interface </a>, <a href="#tbl_if_assignment">surfshark_us_if</a></td>
+  <td>Select the interface in <a href="#sys_if">Assign WG interface </a>, <a href="#tbl_if_assignment">wg_us_if</a></td>
 </tr>
 <tr>
   <th style="background-color: lightblue;">Address Family</th>
@@ -307,7 +307,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;">Interface</th>
-  <td>select <a href="#tbl_if_assignment"><em>surfshark_us_if</em></a> interface</td>
+  <td>select <a href="#tbl_if_assignment"><em>wg_us_if</em></a> interface</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;">TCP/IP Version</th>
@@ -431,10 +431,10 @@
 <div>
 <h2 id="fw_wg_rule">4 - WireGuard rules</h2>
 
-<p>Go to Firewall ‣ Rules ‣ Interface</p>
+<p>Firewall ‣ Rules ‣ Interface</p>
 
 <div>
-<h3 id="fw_wg_grp_rule">WG Group rule</h3>
+<h3 id="fw_wg_grp_rule">4.1 - WG Group rule</h3>
 <div>
 <table id="tbl_wg_grp_rule">
 <caption>Table: WG Group rule to route traffic</caption>
@@ -508,7 +508,7 @@
 </div>
 
 <div>
-<h3 id="fw_wg_if_rule">WG Interface rule</h3>
+<h3 id="fw_wg_if_rule">4.2 - WG Interface rule</h3>
 <div>
 <table id="tbl_wg_if_rule">
 <caption>Table: WG Interface rule</caption>
