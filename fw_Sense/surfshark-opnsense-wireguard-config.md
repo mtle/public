@@ -427,8 +427,163 @@
 </div>
 </div>
 
+
 <div>
-<h2 id="fw_kill_switch">4 - VPN kill switch</h2>
+<h2 id="fw_wg_rule">4 - WireGuard rules</h2>
+
+<p>Go to Firewall ‣ Rules ‣ Interface</p>
+
+<div>
+<h3 id="fw_wg_grp_rule">WG Group rule</h3>
+<div>
+<table id="tbl_wg_grp_rule">
+<caption>Table: WG Group rule to route traffic</caption>
+<tr>
+  <th style="background-color: lightblue;">Enable</th>
+  <td> &#x2705; </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Categories</th>
+  <td>vpn</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Description</th>
+  <td>Allow WG Group access to internet</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Invert Interface </th>
+  <td>unchecked</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;"> Interface </th>
+<td>select <mark>Wireguard (Group)</mark></td>
+
+</tr>
+<tr>
+<th style="background-color: lightblue;"> Quick </th>
+<td> &#x2705; </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Action</th>
+  <td>Pass</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Direction </th>
+  <td> in </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> TCP/IP Version </th>
+  <td> IPv4 </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Protocol </th>
+  <td> any </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Source / Invert </th>
+  <td> Unchecked </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Source </th>
+  <td>any</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Destination / Invert </th>
+  <td> &#x2705; </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Destination </th>
+  <td>any</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Destination port range </th>
+  <td> any </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Gateway </th>
+  <td>any</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div>
+<h3 id="fw_wg_if_rule">WG Interface rule</h3>
+<div>
+<table id="tbl_wg_if_rule">
+<caption>Table: WG Interface rule</caption>
+<tr>
+  <th style="background-color: lightblue;">Enable</th>
+  <td> &#x2705; </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Categories</th>
+  <td>vpn</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Description</th>
+  <td>Allow WG IF access to internet</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Invert Interface </th>
+  <td>unchecked</td>
+</tr>
+<tr>
+<th style="background-color: lightblue;"> Interface </th>
+<td>select <a href="#tbl_if_assignment"><mark>wg_us_if</mark></a></td>
+
+</tr>
+<tr>
+<th style="background-color: lightblue;"> Quick </th>
+<td> &#x2705; </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Action</th>
+  <td>Pass</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Direction </th>
+  <td> in </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> TCP/IP Version </th>
+  <td> IPv4 </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Protocol </th>
+  <td> any </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Source / Invert </th>
+  <td> Unchecked </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Source </th>
+  <td>Select <mark>wg_us_if network</mark> or <mark>wg_us_if address</mark></td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Destination / Invert </th>
+  <td> &#x2705; </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Destination </th>
+  <td>select <mark>wg_us_if network</mark></td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Destination port range </th>
+  <td> any </td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;"> Gateway </th>
+  <td>select <a href="#tbl_gw">gw name</a>, <em>ss_us_gw</em></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+<div>
+<h2 id="fw_kill_switch">5 - VPN kill switch</h2>
 <p>Edit <a href="#fw_if_rule">the local fw rule</a> above</p>
 <p>Click on the Show/Hide button next to <mark>Advanced Options</mark>. Then, in the <mark>Set local tag</mark> field, add <mark>NO_WAN_EGRESS</mark>
 </p>
