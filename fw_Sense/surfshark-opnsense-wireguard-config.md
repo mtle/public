@@ -48,11 +48,11 @@
   </tr>
   <tr>
     <th style="background-color: lightblue;">MTU</th>
-    <td>1420 (default) or 1412 if you use PPPoE; it’s 80 bytes less than your WAN MTU</td>
+    <td>1420 (default) or 1412 if WAN type is PPPoE; it’s 80 bytes less than the WAN MTU</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Tunnel Address</th>
-    <td>VPN tunnel IP provided by the VPN provider, e.g. <b>10.14.5.2/16</b></td>
+    <td><em>10.14.5.2/32</em> - VPN tunnel IP provided by the VPN provider</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Peers</th>
@@ -64,12 +64,12 @@
   </tr>
   <tr>
     <th style="background-color: lightblue;">Gateway</th>
-    <td>Specify an IP that is 1 number below your VPN tunnel IP, e.g.<b>10.14.5.1</b></td>
+    <td><em>10.14.5.1</em> - an IP that is 1 number below the VPN tunnel IP</td>
   </tr>
 </table>
 </div>
 
-<p>Save the Instance configuration, and then click Save again</p>
+<p><b>Save</b> the Instance configuration</p>
 </div>
 
 
@@ -100,7 +100,7 @@
   </tr>
   <tr>
     <th style="background-color: lightblue;">Endpoint Address</th>
-    <td>From provider. e.g. 51280</td>
+    <td><em>51820</em> - From provider</td>
   </tr>
   <tr>
     <th style="background-color: lightblue;">Allowed IPs</th>
@@ -117,7 +117,7 @@
 </table>
 </div>
 
-<p>Save the Peer configuration, and then click Apply</p>
+<p><b>Save</b> and <b>Apply</b></p>
 <p>Now go back to VPN ‣ WireGuard ‣ Instances</p>
 <p>Open the Instance configuration that was created in <a href="#wg_inst">Instance</a></p>
 <p>In the Peers dropdown, select the newly created Peer</p>
@@ -159,6 +159,13 @@
   <td>&#x2705;</td>
 </tr>
 <tr>
+  <th style="background-color: lightblue;">Identifier</th>
+  <td>optX</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Device</th>
+  <td>wgX</td>
+<tr>
   <th style="background-color: lightblue;">Description</th>
   <td>wg_us_if</td>
 </tr>
@@ -170,6 +177,14 @@
   <th style="background-color: lightblue;">IPv6 Configuration Type</th>
   <td>None</td>
 </tr>
+<tr>
+  <th style="background-color: lightblue;">MTU</th>
+  <td>1412</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">MSS</th>
+  <td>1412</td>
+</tr>
 </table>
 </div>
 </div>
@@ -179,7 +194,7 @@
 
 <p>Go to System ‣ Gateways ‣ Configuration</p>
 <p>Click Add</p>
-<p>Configure the gateway as follows (if an option is not mentioned below, leave it as the default):</p>
+<p>Configure the gateway as follows:</p>
 
 <div>
 <table id="tbl_gw">
@@ -214,7 +229,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;">Monitor IP</th>
-  <td>Insert the endpoint VPN tunnel IP (NOT the public IP) of your VPN provider</td>
+  <td>Insert the endpoint VPN tunnel IP, copy from <em>VPN</em>-><em>WireGuard</em>-><em>Status</em>-><em>EndPoint</em></td>
 </tr>
 </table>
 </div>
@@ -286,9 +301,9 @@
 <h2 id="fw_srcnat">2 - Source NAT rule</h2>
 
 <p>Go to Firewall ‣ NAT ‣ Source NAT</p>
-<p>Mode: Select “Hybrid outbound NAT rule generation” if it is not already selected. Click Apply</p>
+<p>Mode: Select <mark>Hybrid outbound NAT rule generation</mark> if it is not already selected. Click Apply</p>
 <p>Click Add to add a new rule</p>
-<p>Configure the rule as follows (if an option is not mentioned below, leave it as the default):</p>
+<p>Configure the rule as follows:</p>
 
 <div>
 <table id="tbl_srcnat">
@@ -377,7 +392,7 @@
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Interface </th>
-<td>select a local interface, e.g. <mark>vn</mark></td>
+<td>select a local interface, e.g. <mark>LAN</mark></td>
 </tr>
 <tr>
 <th style="background-color: lightblue;"> Quick </th>
@@ -405,7 +420,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Source </th>
-  <td>Select a local network or a host Alias, e.g. <mark>vn network</mark> or <mark>192.168.5.0/24, 192.168.7.0/24</mark></td>
+  <td>Select a local network or a host Alias, e.g. <mark>LAN network</mark> or <mark>192.168.5.0/24, 192.168.7.0/24</mark></td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination / Invert </th>
@@ -448,7 +463,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;">Description</th>
-  <td>Allow WG Group access to internet</td>
+  <td>Allow WireGuard Group internet access</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;">Invert Interface </th>
@@ -485,7 +500,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Source </th>
-  <td>any</td>
+  <td><em>10.0.0.0/8</em></td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination / Invert </th>
@@ -559,11 +574,11 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Source </th>
-  <td>Select <mark>wg_us_if network</mark> or <mark>wg_us_if address</mark></td>
+  <td>any</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination / Invert </th>
-  <td> &#x2705; </td>
+  <td>uncheck</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination </th>
@@ -575,7 +590,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Gateway </th>
-  <td>select <a href="#tbl_gw">gw name</a>, <em>ss_us_gw</em></td>
+  <td>none</td>
 </tr>
 </table>
 </div>
@@ -649,7 +664,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Description </th>
-  <td> can be empty</td>
+  <td>Block packets tagged wirh <em>NO_WAN_EGRESS</em></td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Match local tag </th>
