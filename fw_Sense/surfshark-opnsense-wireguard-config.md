@@ -504,7 +504,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination / Invert </th>
-  <td> &#x2705; </td>
+  <td> Unchecked </td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination </th>
@@ -582,7 +582,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination </th>
-  <td>select <mark>wg_us_if network</mark></td>
+  <td>any</td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination port range </th>
@@ -664,7 +664,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Description </th>
-  <td>Block packets tagged wirh <em>NO_WAN_EGRESS</em></td>
+  <td>Block packets tagged with <em>NO_WAN_EGRESS</em></td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Match local tag </th>
