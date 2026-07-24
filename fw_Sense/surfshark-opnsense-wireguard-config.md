@@ -246,7 +246,7 @@
 
 <div>
 <table id="tbl_alias_rfc1918">
-<caption>Table: Alias</caption>
+<caption>Table: RFC1918 IPv4 private networks</caption>
 <tr>
   <th style="background-color: lightblue;">Enable</th>
   <td>&#x2705;</td>
@@ -271,7 +271,7 @@
 </div>
 <div>
 <table id="tbl_alias_vpn">
-<caption>Table: Alias</caption>
+<caption>Table: VPN networks</caption>
 <tr>
   <th style="background-color: lightblue;">Enable</th>
   <td>&#x2705;</td>
@@ -291,6 +291,31 @@
 <tr>
   <th style="background-color: lightblue;">Description</th>
   <td></td>
+</tr>
+</table>
+</div>
+<div>
+<table id="tbl_alias_wg_netorks">
+<caption>Table: Provider WG networks</caption>
+<tr>
+  <th style="background-color: lightblue;">Enable</th>
+  <td>&#x2705;</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Name</th>
+  <td>wg_networks</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Type</th>
+  <td>networks</td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">contents</th>
+  <td><mark>10.14.0.0/16</mark>, <mark>10.2.0.0/16</mark></td>
+</tr>
+<tr>
+  <th style="background-color: lightblue;">Description</th>
+  <td>surfshark and protonvpn</td>
 </tr>
 </table>
 </div>
@@ -578,7 +603,7 @@
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination / Invert </th>
-  <td>uncheck</td>
+  <td> Unchecked </td>
 </tr>
 <tr>
   <th style="background-color: lightblue;"> Destination </th>
