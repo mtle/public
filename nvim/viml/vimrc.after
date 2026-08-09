@@ -1,6 +1,0 @@
-" vimrc.after
-
-if WINDOWS()
-    call SourceIfExists("$VIMRUNTIME/mswin.vim")
-endif
-
