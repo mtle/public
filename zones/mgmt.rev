@@ -1,0 +1,33 @@
+; -----------------------------------------------
+; mgmt.rev
+; -----------------------------------------------
+
+$TTL 2d         ; default time to live
+
+$ORIGIN 11.168.192.in-addr.arpa.
+@       IN SOA ns1.linkon.dedyn.io. admin.linkon.dedyn.io. (
+                2026081200  ; serial number
+                2d          ; Refresh every 1d
+                1h          ; update retry every 1 hour
+                4W          ; Expire in 4 weeks
+                1d          ; Min TTL = 1 day
+                )
+
+       IN       NS      x96.linkon.dedyn.io.
+
+2      IN       PTR     fw.linkon.dedyn.io.
+
+15     IN       PTR     lianguo.linkon.dedyn.io.
+14     IN       PTR     hicomdata.linkon.dedyn.io.
+13     IN       PTR     tpe1021ws.linkon.dedyn.io.
+12     IN       PTR     yulinca.linkon.dedyn.io.
+11     IN       PTR     gs724tv4.linkon.dedyn.io.
+5      IN       PTR     kabini.linkon.dedyn.io.
+7      IN       PTR     x86.linkon.dedyn.io.
+
+; aliases
+15     IN       PTR     sw5.linkon.dedyn.io.
+14     IN       PTR     sw4.linkon.dedyn.io.
+13     IN       PTR     sw3.linkon.dedyn.io.
+12     IN       PTR     sw2.linkon.dedyn.io.
+11     IN       PTR     sw1.linkon.dedyn.io.
