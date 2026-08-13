@@ -11,7 +11,7 @@
       <th style="background-color: lightblue;">Bus Interface</th>
       <th style="background-color: lightblue;">Processor</th>
       <th style="background-color: lightblue;">Data Transfer Rate</th>
-      <th style="background-color: lightblue;">Dimensions|</th>
+      <th style="background-color: lightblue;">Dimensions</th>
     </tr>
     <tr>
       <td>39Y6127FP</td>
@@ -21,7 +21,7 @@
       <td>PCIe x4 1.0a</td>
       <td>Intel® 82571EB</td>
       </td>1 Gb</td>
-      <td></td>
+      <td>?</td>
     </tr>
     <tr>
       <td>nc382t</td>
