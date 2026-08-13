@@ -2,7 +2,7 @@
 
 <div>
   <table>
-    <caption>Dual port NICs</caption>caption>
+    <caption>Dual port NICs</caption>
     <tr>
       <th style="background-color: lightblue;">Part Number</th>
       <th style="background-color: lightblue;">Manufacturer</th>
