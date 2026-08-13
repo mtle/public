@@ -5,8 +5,8 @@
 $TTL 2d         ; default time to live
 
 $ORIGIN 5.168.192.in-addr.arpa.
-@       IN SOA ns1.linkon.dedyn.io. admin.linkon.dedyn.io. (
-                2026081200  ; serial number
+@       IN SOA x96.linkon.dedyn.io. admin.linkon.dedyn.io. (
+                2026081300  ; serial number
                 2d          ; Refresh every 1d
                 1h          ; update retry every 1 hour
                 4W          ; Expire in 4 weeks
