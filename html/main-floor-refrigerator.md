@@ -23,13 +23,15 @@
 		<td>$2,294.99</td>
 		<td><a href="https://www.costco.ca/p/-/samsung-bespoke-36-in-239-cu-ft-stainless-steel-3-door-french-door-counter-depth-refrigerator-with-beverage-center/4000024530?langId=-24" target="_blank">Costco</td>
 		<td>
-			<ul>Adjustable Shelves</ul>
-			<ul>Fingerprint Resistant</ul>
-			<ul>Interior LED Lighting</ul>
-			<ul>Metal Cooling Duct</ul>
-			<ul>Water Dispenser</ul>
-			<ul>Water Filter</ul>
-			<ul>Tempered Glass</ul>
+			<ul>
+				<li>Adjustable Shelves</li>
+				<li>Fingerprint Resistant</li>
+				<li>Interior LED Lighting</li>
+				<li>Metal Cooling Duct</li>
+				<li>Water Dispenser</li>
+				<li>Water Filter</li>
+				<li>Tempered Glass</li>
+			</ul>
 		</td>
 		<td>Samsung 36 in. 24 cu ft. Stainless Steel Counter Depth Zero Clearance Fit French Door Refrigerator with Internal Water Dispenser</td>
     </tr>
@@ -43,13 +45,15 @@
 		<td>$2,294.99</td>
 		<td><a href="https://www.costco.ca/p/-/lg-36-in-25-cu-ft-zero-clearance-stainless-steel-counter-depth-french-door-refrigerator-with-internal-water-dispenser-and-ice-maker/4201000057?langId=-24" target="_blank">Costco</td>
 		<td>
-			<ul>Energy Star Certified</ul>
-			<ul>Fingerprint Resistant</ul>
-			<ul>Interior LED Lighting</ul>
-			<ul>Metal Cooling Duct</ul>
-			<ul>Water Dispenser</ul>
-			<ul>Water Filter</ul>
-			<ul>Tempered Glass</ul>
+			<ul>
+				<li>Energy Star Certified</li>
+				<li>Fingerprint Resistant</li>
+				<li>Interior LED Lighting</li>
+				<li>Metal Cooling Duct</li>
+				<li>Water Dispenser</li>
+				<li>Water Filter</li>
+				<li>Tempered Glass</li>
+			</ul>
 		</td>
 		<td>LG 36 in. 25 cu ft. Zero Clearance Stainless Steel Counter Depth French Door Refrigerator with Internal Water Dispenser and Ice Maker</td>
     </tr>
@@ -63,51 +67,11 @@
 		<td>$</td>
 		<td><a href="" target="_blank">Costco</td>
 		<td>
-			<ul>Adjustable Shelves</ul>
-			<ul>Interior LED Lighting</ul>
-			<ul>Metal Cooling Duct</ul>
-			<ul>Water Dispenser</ul>
-			<ul>Water Filter</ul>
-			<ul>Tempered Glass</ul>
+			<ul>
+				<li></li>
+			</ul>
 		</td>
 		<td></td>
     </tr>
-    <tr class="odd" id="">
-		<td></td>
-		<td></td>
-		<td>Stainless Steel</td>
-		<td>French Door</td>
-		<td></td>
-		<td>Counter depth</td>
-		<td>$</td>
-		<td><a href="" target="_blank">Costco</td>
-		<td>
-			<ul>Adjustable Shelves</ul>
-			<ul>Interior LED Lighting</ul>
-			<ul>Metal Cooling Duct</ul>
-			<ul>Water Dispenser</ul>
-			<ul>Water Filter</ul>
-			<ul>Tempered Glass</ul>
-		</td>
-		<td></td>
-    </tr>
-    <tr class="odd" id="">
-		<td></td>
-		<td></td>
-		<td>Stainless Steel</td>
-		<td>French Door</td>
-		<td></td>
-		<td>Counter depth</td>
-		<td>$</td>
-		<td><a href="" target="_blank">Costco</td>
-		<td>
-			<ul>Adjustable Shelves</ul>
-			<ul>Interior LED Lighting</ul>
-			<ul>Metal Cooling Duct</ul>
-			<ul>Water Dispenser</ul>
-			<ul>Water Filter</ul>
-			<ul>Tempered Glass</ul>
-		</td>
-		<td></td>
-    </tr>
+
 </table>
