@@ -110,14 +110,4 @@
 		</td>
 		<td></td>
     </tr>
-
-
-    <tfoot>
-        <tr class="">
-            <th>Notes</th>
-            <td colspan="4">
-
-            </td>
-        </tr>
-    </tfoot>
 </table>
