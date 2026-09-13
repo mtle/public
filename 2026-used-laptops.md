@@ -8,6 +8,7 @@
       <td>Dell</td>
       <td>HP</td>
       <td>HP</td>
+      <td>Dell</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">Model</th>
@@ -16,6 +17,7 @@
       <td>Latitude 5430</td>
       <td>EliteBook 860 G9</td>
       <td>EliteBook 860 G9</td>
+      <td>Latitude 5430</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">MPN</th>
@@ -24,6 +26,7 @@
       <td></td>
       <td></td>
       <td>HSN-l45c</td>
+      <td></td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">Processor</th>
@@ -32,6 +35,7 @@
       <td>i5-1245U</td>
       <td>i5-1245U</td>
       <td>i5-1250P</td>
+      <td>i7-1255U</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">Screen Size</th>
@@ -40,9 +44,11 @@
       <td></td>
       <td>16"</td>
       <td>16" 1920x1200</td>
+      <td>14"</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">GPU</th>
+      <td>Intel Iris Xe</td>
       <td>Intel Iris Xe</td>
       <td>Intel Iris Xe</td>
       <td>Intel Iris Xe</td>
@@ -56,9 +62,11 @@
       <td>16GB</td>
       <td>16GB</td>
       <td>16GB</td>
+      <td>8GB</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">Storage</th>
+      <td>256GB nvme</td>
       <td>256GB nvme</td>
       <td>256GB nvme</td>
       <td>256GB nvme</td>
@@ -70,7 +78,8 @@
       <td>$320.00</td>
       <td>$350.00</td>
       <td>$449.00</td>
-      <td>$400</td>
+      <td>$400 + </td>
+      <td>$390 + $29.00</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">Notes</th>
@@ -117,6 +126,16 @@
           <li>Built-in Webcam</li>
           <li>Battery Health: 75%</li>
           <li><a href="https://www.ebay.ca/itm/188871712847?LH_BIN=1" target="_blank">ebay</a></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Win11Pro</li>
+          <li>Backlit Keyboard</li>
+          <li>Bluetooth</li>
+          <li>Built-in Microphone</li>
+          <li>Built-in Webcam</li>
+          <li><a href="https://www.ebay.ca/itm/277925609960" target="_blank">ebay</a></li>
         </ul>
       </td>
     </tr>
