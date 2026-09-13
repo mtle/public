@@ -149,7 +149,7 @@
       </td>
       <td>
         <ul>
-          <li><a href="https://www.ebay.ca/itm/267769019030" target="_blank">ebay</a></li>
+          <li><a href="https://www.ebay.ca/itm/267769019030" target="_blank">The Mobile Base</a></li>
         </ul>
       </td>
     </tr>
