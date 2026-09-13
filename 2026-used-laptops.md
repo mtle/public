@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <th style="background-color: lightblue;">MPN</th>
-      <td></td>
+      <td>P136G002</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">Processor</th>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <th style="background-color: lightblue;">GPU</th>
-      <td></td>
+      <td>Intel Iris Xe</td>
     </tr>
     <tr>
       <th style="background-color: lightblue;">RAM</th>
@@ -38,7 +38,10 @@
       <td>
         <ul>
           <li>Win11Pro</li>
-          <li>Touch</li>
+          <li>Touchscreen: Yes</li>
+          <li>Screen Resolution: 1920x1080</li>
+          <li>Battery Health: 80%</li>
+          <li>[ebay](https://www.ebay.ca/itm/178054123575)</li>
         </ul>
       </td>
     </tr>
