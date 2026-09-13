@@ -34,6 +34,10 @@
       <td>256GB nvme</td>
     </tr>
     <tr>
+      <th>Price [CAD]</th>
+      <td>$340.00</td>
+    </tr>
+    <tr>
       <th style="background-color: lightblue;">Notes</th>
       <td>
         <ul>
@@ -41,7 +45,7 @@
           <li>Touchscreen: Yes</li>
           <li>Screen Resolution: 1920x1080</li>
           <li>Battery Health: 80%</li>
-          <li>[ebay](https://www.ebay.ca/itm/178054123575)</li>
+          <li><a href="https://www.ebay.ca/itm/178054123575" target="_blank">ebay</a></li>
         </ul>
       </td>
     </tr>
