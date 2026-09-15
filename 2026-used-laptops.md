@@ -157,5 +157,42 @@
   </table>
 
 </div>
-</div>
+
+
+<div>
+  <table>
+    <caption>Used laptops</caption>
+    <tr>
+      <th style="background-color: lightblue;">Brand</th>
+      <th style="background-color: lightblue;">Model</th>
+      <th style="background-color: lightblue;">MPN</th>
+      <th style="background-color: lightblue;">Processor</th>
+      <th style="background-color: lightblue;">Screen Size</th>
+      <th style="background-color: lightblue;">GPU</th>
+      <th style="background-color: lightblue;">RAM</th>
+      <th style="background-color: lightblue;">Storage</th>
+      <th style="background-color: lightblue;">Price [CAD]</th>
+      <th style="background-color: lightblue;">Notes</th>
+    </tr>
+    <tr>
+      <td>Dell</td>
+      <td>Latitude 7430</td>
+      <td>P136G002</td>
+      <td>i5-1235U</td>
+      <td>14" 1920x1080</td>
+      <td>Intel Iris Xe</td>
+      <td>16GB</td>
+      <td>256GB nvme</td>
+      <td>$340.00 + $24.39</td>
+      <td>
+        <ul>
+          <li>Win11Pro</li>
+          <li>Touchscreen: Yes</li>
+          <li>Battery Health: 80%</li>
+          <li><a href="https://www.ebay.ca/itm/178054123575" target="_blank">CSI EPC</a></li>
+        </ul>
+      </td>
+    </tr>
+ 
+  </table>
 </div>
